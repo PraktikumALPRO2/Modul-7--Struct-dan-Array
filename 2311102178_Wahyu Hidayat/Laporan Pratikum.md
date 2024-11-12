@@ -3,8 +3,8 @@
 
 <br>
 
-<h2 align="center"><strong>MODUL VI</strong></h2>
-<h2 align="center"><strong> REKURSIF </strong></h2>
+<h2 align="center"><strong>MODUL VII</strong></h2>
+<h2 align="center"><strong> STRUCT DAN ARRAY </strong></h2>
 
 <br>
 
@@ -41,41 +41,35 @@
 ------
 
 ## I. Dasar Teori
-### Definisi Rekursif
-Rekursif adalah konsep dalam pemrograman di mana suatu fungsi memanggil dirinya sendiri untuk menyelesaikan masalah yang lebih kecil dari masalah awal. Teknik ini sering digunakan untuk memecah masalah kompleks menjadi sub-masalah yang lebih sederhana, sehingga masalah dapat diselesaikan secara bertahap hingga mencapai solusi akhir. Rekursif umum digunakan dalam perhitungan faktorial, deret Fibonacci, dan algoritma pencarian seperti pencarian dalam pohon (tree)[1].
+### Definisi Tipe Bentukan
+Tipe bentukan adalah fitur dalam bahasa pemrograman yang memungkinkan pengguna untuk mendefinisikan tipe data baru yang dapat menyesuaikan kebutuhan program. Tipe bentukan ini terbagi menjadi dua jenis utama, yaitu alias dan struct [1].
 
-### Jenis-Jenis Rekursif
-Ada dua jenis utama rekursif: rekursif langsung dan rekursif tidak langsung. Pada rekursif langsung, suatu fungsi memanggil dirinya sendiri secara langsung. Sedangkan pada rekursif tidak langsung, fungsi memanggil fungsi lain, yang pada gilirannya memanggil fungsi pertama. Kedua jenis rekursif ini bermanfaat dalam situasi yang berbeda, namun rekursif langsung lebih sering digunakan karena lebih mudah dipahami dan diterapkan untuk masalah sederhana[2].
+#### 1. Alias (Type): 
+Alias adalah teknik yang digunakan untuk memberi nama baru yang lebih ringkas atau familiar pada suatu tipe data yang sudah ada. Contohnya, integer bisa diberi alias sebagai bilangan. Biasanya, penggantian nama ini dilakukan dengan menggunakan kata kunci type, yang mempermudah pengkodean dan meningkatkan keterbacaan [2].
 
-### Base Case dan Recursive Case
-ungsi rekursif harus memiliki dua komponen utama: base case dan recursive case. Base case adalah kondisi berhenti yang mencegah fungsi berjalan tanpa henti, sehingga fungsi berhenti memanggil dirinya sendiri ketika mencapai kondisi ini. Recursive case adalah bagian dari fungsi yang memanggil dirinya sendiri dengan versi yang lebih kecil dari masalah asli, hingga akhirnya mencapai base case. Kedua komponen ini penting agar rekursif berjalan dengan benar dan tidak menyebabkan stack overflow[3].
+#### 2. Struct atau Record: 
+Struct adalah tipe data yang mengelompokkan beberapa variabel dengan berbagai tipe data menjadi satu kesatuan. Masing-masing data dalam struct tersimpan dalam field yang berbeda, yang berguna untuk menyimpan data yang memiliki hubungan erat, seperti data mahasiswa. Pada beberapa bahasa pemrograman, kesamaan tipe dari dua variabel struct ditentukan oleh struktur dari field-nya, bukan nama struct-nya [3].
 
-Contoh Implementasi Rekursif dalam Go:
+### Array Statis dan Dinamis
+Array adalah struktur data yang digunakan untuk menyimpan data dengan tipe yang sama dalam jumlah yang tetap atau berubah-ubah. Terdapat dua jenis array dalam pemrograman:
 
+#### 1. Array Statis: 
+Array statis adalah array dengan ukuran tetap yang ditentukan saat deklarasi. Setiap elemen array dapat diakses menggunakan indeks yang dimulai dari 0, misalnya int nilai[5] = {85, 90, 78, 88, 92}; [4].
+
+#### 2. Slice (Array Dinamik): 
+Dalam bahasa pemrograman seperti Go, terdapat array dinamis atau slice, yang memungkinkan ukuran array untuk berubah-ubah selama runtime. Deklarasi slice mirip dengan array, namun tanpa jumlah elemen tertentu. Slice dapat dialokasikan dengan fungsi make, sementara fungsi len dan cap dapat digunakan untuk mengetahui jumlah elemen dan kapasitas slice. Fungsi append dapat digunakan untuk menambah elemen baru ke dalam slice, menyesuaikan ukuran array dinamis tersebut sesuai kebutuhan [5].
+
+### Map (Array Dinamik dengan Kunci)
+Map adalah tipe data yang memungkinkan penggunaan kunci (key) selain integer sebagai indeks. Kunci dalam map dapat berupa tipe data apa saja, seperti string atau integer, yang membuatnya sangat fleksibel untuk menyimpan data dengan pasangan kunci-nilai (key-value) [6].
+
+### Menggabungkan Struct dan Array
+Struct dan array sering digunakan bersamaan untuk mengelola data yang kompleks. Contohnya, kita bisa menggunakan array berisi struct untuk menyimpan data mahasiswa dalam jumlah banyak. Contoh deklarasinya adalah:
+
+#### Source Code
 ```go
-package main
-
-import "fmt"
-
-func faktorial(n int) int {
-    if n == 1 { // Base case
-        return 1
-    }
-    return n * faktorial(n-1) // Recursive case
-}
-
-func main() {
-    fmt.Println(faktorial(5)) // Output: 120
-}
-
-
+struct Mahasiswa kelas[30];
 ```
-#### Penjelasan:
-Pada contoh ini, fungsi faktorial memiliki base case yang mengecek apakah n adalah 1. Jika iya, fungsi mengembalikan 1. Jika tidak, fungsi akan memanggil dirinya sendiri dengan n-1 hingga akhirnya mencapai base case. Ini memungkinkan kita untuk menghitung faktorial secara bertahap dari n hingga 1[4].
-
-### Kelebihan dan Kekurangan Rekursif
-Rekursif menawarkan cara yang sederhana untuk menyelesaikan masalah yang dapat dipecah menjadi bagian-bagian yang lebih kecil, terutama untuk struktur data yang bersifat hierarkis seperti pohon. Namun, pemakaian rekursif yang tidak tepat atau tanpa base case yang jelas dapat menyebabkan konsumsi memori yang besar dan bahkan stack overflow, karena setiap pemanggilan fungsi membutuhkan ruang di stack. Di Go, rekursif sering kali kurang efisien dibandingkan pendekatan iteratif dalam kasus yang sederhana karena Go tidak mendukung optimisasi tail recursion[5].
-
+Penggunaan ini memungkinkan kita untuk mengelola data dalam format yang terstruktur dan teratur, serta lebih mudah diakses dalam berbagai skenario pemrograman [7].
 
 ## II. GUIDED
 ## 1. Membuat baris bilangan dari n hingga 1
@@ -664,12 +658,16 @@ Program ini bertujuan untuk menghitung hasil pangkat dari dua bilangan bulat x d
 Rekursif adalah teknik dalam pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk memecah masalah kompleks menjadi sub-masalah yang lebih sederhana. Teknik ini membantu menyelesaikan masalah secara bertahap hingga mencapai solusi akhir. Ada dua jenis utama rekursif: rekursif langsung, di mana fungsi memanggil dirinya sendiri secara langsung, dan rekursif tidak langsung, di mana fungsi memanggil fungsi lain yang kemudian memanggil fungsi pertama. Fungsi rekursif harus memiliki base case, yaitu kondisi yang menghentikan rekursi, dan recursive case, yaitu bagian yang memanggil fungsi kembali dengan masalah yang lebih kecil. Base case dan recursive case sangat penting untuk memastikan bahwa fungsi rekursif tidak berjalan tanpa henti dan dapat menyelesaikan masalah secara efisien.
 
 ## Referensi 
-[1] Sharma, D. (2022). Recursive Function Fundamentals in Go. Journal of Go Programming, 21(3), 147-162.
+[1] Kernighan, B. W., & Ritchie, D. M. (1988). The C Programming Language (2nd ed.). Prentice Hall.
 
-[2] Tanenbaum, A., & Meyers, J. (2021). Recursive Programming Techniques. New York: GoLang Press.
+[2] Deitel, P., & Deitel, H. (2015). C How to Program (8th ed.). Pearson.
 
-[3] Miller, L. (2020). Recursive Patterns and Best Practices. San Francisco: CodeStream Publishing.
+[3] Tanenbaum, A. S., & Bos, H. (2014). Modern Operating Systems (4th ed.). Pearson.
 
-[4] Go Documentation. (2023). Recursive Functions in Go.
+[4] Robbins, K. A., & Robbins, S. (2003). Unix Systems Programming: Communication, Concurrency, and Threads. Prentice Hall.
 
-[5] Cooper, R. (2019). Efficient Recursive Patterns in Software Design. Journal of Computer Science, 29(4), 256-269.
+[5] Donovan, A. A., & Kernighan, B. W. (2015). The Go Programming Language. Addison-Wesley.
+
+[6] Reinders, J. (2007). Intel Threading Building Blocks. O'Reilly Media.
+
+[7] Weiss, M. A. (2013). Data Structures and Algorithm Analysis in C (3rd ed.). Pearson.
