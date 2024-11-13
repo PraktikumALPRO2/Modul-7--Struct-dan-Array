@@ -8,7 +8,7 @@
 <br>
 
 <p align="center">
-  <strong>MODUL III</strong>
+  <strong>MODUL VII</strong>
   <br>
   <strong>Struck & Array</strong>
   <br>
