@@ -434,34 +434,36 @@ func main() {
 	fmt.Println("h. Tampilkan frekuensi elemen tertentu")
 
 	var pilihan string
-	fmt.Print("Pilih operasi: ")
+	fmt.Print("\nPilih operasi: ")
 	fmt.Scan(&pilihan)
 
 	switch pilihan {
 	case "a":
 		fmt.Println("Isi array:", daftarBilangan)
 	case "b":
-		fmt.Println("Elemen dengan indeks ganjil:")
-		for i := 1; i < jumlahElemen; i += 2 {
-			fmt.Print(daftarBilangan[i], " ")
+		fmt.Println("Elemen dengan nilai ganjil:")
+		for i := 0; i < jumlahElemen; i++ {
+			if daftarBilangan[i]%2 != 0 { // Cek jika elemen adalah bilangan ganjil
+				fmt.Print(daftarBilangan[i], " ")
+			}
 		}
 		fmt.Println()
 	case "c":
-		fmt.Println("Elemen dengan indeks genap:")
-		for i := 0; i < jumlahElemen; i += 2 {
+		fmt.Println("Elemen dengan nilai genap:")
+		for i := 1; i < jumlahElemen; i += 2 { 
 			fmt.Print(daftarBilangan[i], " ")
 		}
 		fmt.Println()
 	case "d":
 		fmt.Print("Masukkan nilai kelipatan: ")
 		fmt.Scan(&kelipatan)
-		fmt.Printf("Elemen dengan indeks kelipatan %d:\n", kelipatan)
+		fmt.Printf("Elemen dengan kelipatan indeks %d:\n", kelipatan)
 		for i := 0; i < jumlahElemen; i++ {
-			if i%kelipatan == 0 {
+			if daftarBilangan[i] % kelipatan == 0 { // Memeriksa apakah nilai elemen adalah kelipatan dari angka yang dimasukkan
 				fmt.Print(daftarBilangan[i], " ")
 			}
 		}
-		fmt.Println()
+		fmt.Println()	
 	case "e":
 		fmt.Print("Masukkan indeks yang akan dihapus: ")
 		fmt.Scan(&indeksHapus)
@@ -507,9 +509,17 @@ func main() {
 
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/540505ad-fb8b-4f13-ba04-e0e8b032c4a3)
+![image](https://github.com/user-attachments/assets/637776b3-c893-43dc-bb9c-6419f047e37b)
+![image](https://github.com/user-attachments/assets/007bd5d1-69c4-4f13-a440-badf4fde80ec)
+![image](https://github.com/user-attachments/assets/0eafce78-7957-4e9c-bcca-85991a576c02)
+![image](https://github.com/user-attachments/assets/c6346911-3bd7-463a-a956-5b9768f46073)
+![image](https://github.com/user-attachments/assets/be020cb3-3b09-4993-b698-36a22e612e05)
+![image](https://github.com/user-attachments/assets/cbacd229-6613-4067-90e5-e185bb6a1a99)
+![image](https://github.com/user-attachments/assets/716f9b2e-1012-49ab-9d46-4426c079c4b8)
 
 ### Full code Screenshot:
-![code](https://github.com/user-attachments/assets/ca81e2df-60ce-4b6b-a775-bc8968db6f77)
+![code](https://github.com/user-attachments/assets/52b620b1-e1fb-4e90-b8dc-87271317e3ba)
 
 ### Deskripsi Program : 
 Program ini dibuat untuk mengelola array berisi bilangan bulat dan memiliki beberapa operasi yang dapat dilakukan. Pertama, pengguna akan diminta untuk mengisi jumlah elemen dalam array serta memasukkan setiap angkanya secara satu per satu. Setelah data terisi, pengguna bisa memilih beberapa opsi seperti menampilkan semua isi array, menampilkan elemen dengan indeks ganjil atau genap, dan menampilkan elemen pada indeks tertentu yang merupakan kelipatan dari angka yang ditentukan. Selain itu, program juga memiliki operasi untuk menghapus elemen pada indeks tertentu, menghitung rata-rata dan standar deviasi dari seluruh elemen, serta mencari seberapa sering suatu angka muncul dalam array. Program ini dirancang dengan antarmuka yang sederhana, sehingga pengguna dapat dengan mudah memilih opsi dan langsung melihat hasilnya.
