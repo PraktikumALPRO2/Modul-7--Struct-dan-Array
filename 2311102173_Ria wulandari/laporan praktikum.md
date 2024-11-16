@@ -378,11 +378,11 @@ Program ini menghitung posisi suatu titik terhadap dua lingkaran berdasarkan koo
 
 2. Perhitungan Posisi Titik
 
-Program menghitung jarak antara titik dan pusat lingkaran untuk menentukan apakah titik berada di dalam lingkaran.
+- Program menghitung jarak antara titik dan pusat lingkaran untuk menentukan apakah titik berada di dalam lingkaran.
 
 3. Cek Kondisi
 
-Program memeriksa apakah jarak tersebut menunjukkan bahwa titik berada di dalam lingkaran 1, lingkaran 2, atau di keduanya.
+- Program memeriksa apakah jarak tersebut menunjukkan bahwa titik berada di dalam lingkaran 1, lingkaran 2, atau di keduanya.
 
 4. Output Hasil
 
@@ -395,7 +395,7 @@ Program memeriksa apakah jarak tersebut menunjukkan bahwa titik berada di dalam 
 #### Cara kerja program
 1. Penggunaan Struct
 
-Struct `Lingkaran` digunakan untuk menyimpan informasi pusat dan radius dari lingkaran.
+- Struct `Lingkaran` digunakan untuk menyimpan informasi pusat dan radius dari lingkaran.
 
 2. Fungsi Pendukung
 
@@ -410,7 +410,7 @@ Struct `Lingkaran` digunakan untuk menyimpan informasi pusat dan radius dari lin
 
 4. Hasil Akhir
 
-Program mencetak hasil posisi titik berdasarkan lingkaran-lingkaran tersebut.
+- Program mencetak hasil posisi titik berdasarkan lingkaran-lingkaran tersebut.
 ### 2. Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilai. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa informasi berikut:
 a. Menampilkan keseluruhan isi dari array.
 
@@ -575,11 +575,11 @@ Program ini memungkinkan pengguna untuk mengelola dan menganalisis elemen-elemen
 
 6. Output Hasil
 
-Tampilkan hasil dari operasi yang dilakukan pada array.
+- Tampilkan hasil dari operasi yang dilakukan pada array.
 #### Cara kerja program
 1. Input Data Array
 
-Program meminta pengguna memasukkan ukuran array dan elemen-elemennya. Data disimpan dalam slice `arr`.
+- Program meminta pengguna memasukkan ukuran array dan elemen-elemennya. Data disimpan dalam slice `arr`.
 
 2. Pengolahan Array
 
@@ -589,7 +589,7 @@ Program meminta pengguna memasukkan ukuran array dan elemen-elemennya. Data disi
 
 3. Penghapusan Elemen
 
-Fungsi `hapusElemenPadaIndeks` menghapus elemen pada indeks tertentu setelah memastikan indeks valid.
+- Fungsi `hapusElemenPadaIndeks` menghapus elemen pada indeks tertentu setelah memastikan indeks valid.
 
 4. Perhitungan Statistik
 
@@ -598,11 +598,11 @@ Fungsi `hapusElemenPadaIndeks` menghapus elemen pada indeks tertentu setelah mem
 
 5. Frekuensi Bilangan
 
-Fungsi `hitungFrekuensi` menghitung jumlah kemunculan bilangan tertentu dalam array.
+- Fungsi `hitungFrekuensi` menghitung jumlah kemunculan bilangan tertentu dalam array.
 
 6. Output
 
-Program menampilkan array hasil pengolahan, statistik rata-rata dan standar deviasi, serta jumlah kemunculan bilangan tertentu.
+- Program menampilkan array hasil pengolahan, statistik rata-rata dan standar deviasi, serta jumlah kemunculan bilangan tertentu.
 ### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga. Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja. Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.
 #### Source code :
 ```go
@@ -670,7 +670,7 @@ Program ini berfungsi untuk merekam hasil pertandingan antara dua klub sepak bol
 #### Algoritma program
 1. Input Nama Klub:
 
-Program meminta input nama klub A dan klub B.
+- Program meminta input nama klub A dan klub B.
 
 2. Input Skor Pertandingan:
 
@@ -694,7 +694,7 @@ Program meminta input nama klub A dan klub B.
 #### Cara kerja program
 1. Input Nama Klub:
 
-Program meminta pengguna untuk memasukkan nama klub A dan klub B melalui `fmt.Scanln`.
+- Program meminta pengguna untuk memasukkan nama klub A dan klub B melalui `fmt.Scanln`.
 
 2. Input Skor Pertandingan:
 
@@ -709,7 +709,7 @@ Program meminta pengguna untuk memasukkan nama klub A dan klub B melalui `fmt.Sc
 
 4. Menampilkan Hasil Akhir:
 
-Setelah 9 pertandingan atau setelah skor negatif dimasukkan, program menampilkan hasil akhir dengan menggunakan `fmt.Printf` untuk menampilkan jumlah kemenangan dan jumlah seri.
+- Setelah 9 pertandingan atau setelah skor negatif dimasukkan, program menampilkan hasil akhir dengan menggunakan `fmt.Printf` untuk menampilkan jumlah kemenangan dan jumlah seri.
 ### 4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan isi array dan memeriksa apakah membentuk palindrom
 #### Source code :
 ```go
