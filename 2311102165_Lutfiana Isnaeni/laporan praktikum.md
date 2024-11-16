@@ -866,8 +866,70 @@ func main() {
 ![image](https://github.com/user-attachments/assets/2fc62f6f-dd68-4953-b22f-39f581f8f89e)
 
 ### Deskripsi Program
+Program di atas digunakan untuk untuk mencatat skor pertandingan antara dua klub dan menentukan pemenang dari setiap pertandingan. Program akan terus menerima skor pertandingan secara berurutan hingga pengguna memasukkan skor negatif, yang menjadi tanda untuk mengakhiri pencatatan. Setelah itu, program menampilkan hasil dari semua pertandingan yang telah dimainkan.
+
 ### Algoritma Program:
+1.	Deklarasi Variabel:
+   
+	•	Variabel string `klubA` dan `klubB` digunakan untuk menyimpan nama masing-masing klub.
+
+ 	•	Variabel integer `skorA` dan `skorB` untuk mencatat skor kedua klub dalam setiap pertandingan.
+
+	•	Slice string `pemenang` digunakan untuk menyimpan pemenang dari setiap pertandingan.
+
+	•	Variabel `pertandingan` untuk mencatat nomor pertandingan.
+
+3.	Input Nama Klub:
+   
+	•	Pengguna diminta untuk memasukkan nama klub pertama `(klubA)` dan klub kedua `(klubB)`.
+
+4.	Proses Input Skor:
+   
+	•	Program menjalankan loop untuk menerima skor pertandingan.
+
+	•	Setiap pertandingan meminta skor untuk `klubA` dan `klubB`.
+
+	•	Jika salah satu skor negatif, loop dihentikan, menandakan akhir pencatatan.
+
+5.	Penentuan Pemenang:
+   
+	•	Jika skor `klubA` lebih tinggi dari `klubB`, nama `klubA` ditambahkan ke daftar pemenang.
+
+	•	Jika sebaliknya, nama `klubB` ditambahkan.
+
+	•	Jika skornya sama, program menambahkan "Draw" ke daftar.
+
+6.	Output Hasil:
+	•	Setelah loop selesai, program menampilkan hasil pertandingan berdasarkan daftar pemenang.
+
+
 ### Cara Kerja Program:
+1.	Memulai Program:
+   
+	•	Pengguna diminta memasukkan nama dua klub, misalnya `Klub A` dan `Klub B`.
+
+2.	Pencatatan Skor:
+   
+	•	Untuk setiap pertandingan, pengguna memasukkan skor untuk kedua klub.
+
+3.	Penentuan dan Pencatatan Hasil:
+   
+	•	Program membandingkan skor yang dimasukkan:
+
+	-	Jika `skorA` lebih tinggi, `klubA` tercatat sebagai pemenang.
+
+	-	Jika `skorB` lebih tinggi, `klubB` tercatat sebagai pemenang.
+
+	-	Jika skor seimbang, hasil "Draw" dicatat.
+
+4.	Mengakhiri Input:
+  	
+	•	Pengguna dapat menghentikan proses dengan memasukkan skor negatif.
+
+5.	Menampilkan Hasil:
+   
+	•	Program mencetak hasil setiap pertandingan 
+
 
 ### 4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan isi array dan memeriksa apakah membentuk palindrom
 ### Source code
@@ -961,8 +1023,51 @@ func main() {
 ![image](https://github.com/user-attachments/assets/5247310d-db93-4080-ac46-aed967099410)
 
 ### Deskripsi Program
-### Algoritma Program:
-### Cara Kerja Program:
+Program di atas digunakan untuk memproses teks yang dimasukkan pengguna hingga mencapai tanda titik (.). Program menyimpan teks dalam sebuah array dan memiliki tiga fitur utama: menampilkan teks asli, membalik urutan teks, serta memeriksa apakah teks tersebut merupakan palindrom (teks yang sama saat dibaca dari depan maupun belakang).
 
+### Algoritma Program:
+1. Inisialisasi Variabel
+   
+	Program mendeklarasikan variabel untuk menyimpan teks, jumlah karakter teks, dan array untuk menampung karakter yang diinput.
+
+2. Pengisian Teks
+   
+	Pengguna diminta memasukkan teks hingga tanda titik (.). Setiap karakter yang dimasukkan akan disimpan ke dalam array hingga karakter titik ditemukan 		atau jumlah karakter mencapai batas maksimal.
+
+3. Menampilkan Teks Asli
+   
+	Program mencetak teks yang dimasukkan pengguna tanpa perubahan.
+
+4. Membalik Urutan Teks
+   
+	Program membalik urutan teks dengan menukar elemen awal dengan elemen akhir secara berpasangan.
+
+5. Pemeriksaan Palindrom
+   
+	Program membandingkan elemen teks dari depan ke belakang. Jika semua pasangan elemen cocok, teks tersebut adalah palindrom. Jika tidak, teks tersebut 		bukan palindrom.
+
+6. Output Akhir
+   
+	Program menampilkan teks asli, teks yang sudah dibalik, serta informasi apakah teks tersebut merupakan palindrom.
+
+### Cara Kerja Program:
+1. Memulai Program
+- Pengguna diminta untuk memasukkan teks melalui terminal.
+- Input dihentikan ketika pengguna mengetikkan tanda titik (`.`) atau jumlah karakter mencapai batas maksimal yang telah ditentukan.
+2. Menyimpan Teks
+- Teks yang dimasukkan pengguna disimpan ke dalam sebuah array, karakter demi karakter, hingga mencapai tanda titik.
+3. Menampilkan Teks Asli
+- Program mencetak teks yang telah disimpan ke dalam array tanpa perubahan, sesuai dengan urutan aslinya.
+4. Membalik Urutan Teks
+- Program membalik urutan teks yang telah disimpan di array, di mana karakter pertama ditukar dengan karakter terakhir, dan seterusnya hingga semua karakter dalam array berbalik posisi.
+5. Menampilkan Teks yang Dibalik
+- Program mencetak teks setelah proses pembalikan urutan, menunjukkan hasil dari teks yang dibalik.
+6. Memeriksa Palindrom
+- Program membandingkan karakter dari awal hingga tengah teks dengan karakter dari akhir ke tengah. Jika setiap pasangan karakter sama, maka teks tersebut adalah palindrom.
+- Jika ditemukan pasangan karakter yang tidak sama, maka teks tersebut bukan palindrom.
+7. Menampilkan Hasil Palindrom
+- Program memberi tahu pengguna apakah teks yang dimasukkan adalah palindrom atau bukan.
+8. Mengakhiri Program
+- Setelah menampilkan hasil pemeriksaan, program selesai dan kembali ke terminal.
 
 
