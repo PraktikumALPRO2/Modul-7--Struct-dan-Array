@@ -375,8 +375,12 @@ func main() {
 
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/9907fef2-147c-4c1d-b16f-d28e21c6fe23)
+![image](https://github.com/user-attachments/assets/2c236f32-0c41-42c5-9581-b4b3ecd0ff35)
+![image](https://github.com/user-attachments/assets/bede38f8-4185-447b-950b-eb45e64b874b)
 
 ### Full code Screenshot:
+![code](https://github.com/user-attachments/assets/cf4a5aee-23fd-4ddf-81d9-7f16d7223dbe)
 
 ### Deskripsi Program : 
 Program ini adalah program yang digunakan untuk menentukan apakah sebuah titik berada di dalam salah satu atau kedua lingkaran. Lingkaran didefinisikan sebagai struct dengan properti berupa titik pusat dan radius, sementara titik direpresentasikan sebagai struct dengan koordinat x dan y. Program meminta input berupa koordinat titik pusat dan radius untuk dua lingkaran, serta koordinat sebuah titik sembarang. Fungsi `jarakAntarTitik` menghitung jarak antara dua titik, yang kemudian digunakan oleh fungsi `cekTitikDiDalam` untuk mengecek apakah titik tersebut berada di dalam lingkaran. Berdasarkan hasil pengecekan, program menampilkan output apakah titik berada di dalam lingkaran pertama, kedua, keduanya, atau di luar kedua lingkaran.
@@ -505,9 +509,10 @@ func main() {
 ### Output:
 
 ### Full code Screenshot:
+![code](https://github.com/user-attachments/assets/ca81e2df-60ce-4b6b-a775-bc8968db6f77)
 
 ### Deskripsi Program : 
-Program ini dibuat untuk mengelola array berisi angka-angka bulat dan memiliki beberapa operasi yang dapat dilakukan. Pertama, pengguna akan diminta untuk mengisi jumlah elemen dalam array serta memasukkan setiap angkanya secara satu per satu. Setelah data terisi, pengguna bisa memilih beberapa opsi seperti menampilkan semua isi array, menampilkan elemen dengan indeks ganjil atau genap, dan menampilkan elemen pada indeks tertentu yang merupakan kelipatan dari angka yang ditentukan. Selain itu, program juga memiliki operasi untuk menghapus elemen pada indeks tertentu, menghitung rata-rata dan standar deviasi dari seluruh elemen, serta mencari seberapa sering suatu angka muncul dalam array. Program ini dirancang dengan antarmuka yang sederhana, sehingga pengguna dapat dengan mudah memilih opsi dan langsung melihat hasilnya.
+Program ini dibuat untuk mengelola array berisi bilangan bulat dan memiliki beberapa operasi yang dapat dilakukan. Pertama, pengguna akan diminta untuk mengisi jumlah elemen dalam array serta memasukkan setiap angkanya secara satu per satu. Setelah data terisi, pengguna bisa memilih beberapa opsi seperti menampilkan semua isi array, menampilkan elemen dengan indeks ganjil atau genap, dan menampilkan elemen pada indeks tertentu yang merupakan kelipatan dari angka yang ditentukan. Selain itu, program juga memiliki operasi untuk menghapus elemen pada indeks tertentu, menghitung rata-rata dan standar deviasi dari seluruh elemen, serta mencari seberapa sering suatu angka muncul dalam array. Program ini dirancang dengan antarmuka yang sederhana, sehingga pengguna dapat dengan mudah memilih opsi dan langsung melihat hasilnya.
 
   
 ### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga. Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja. Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.
@@ -566,8 +571,11 @@ func main() {
 
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/411fa03a-ed70-4939-9f1a-e8e3de481c35)
+![image](https://github.com/user-attachments/assets/8a3db6f4-2bc3-4ae9-bd6a-4c2c589549dc)
 
 ### Full code Screenshot:
+![code](https://github.com/user-attachments/assets/6a4c881c-119a-4c4b-98f6-8bcd8433b521)
 
 ### Deskripsi Program : 
 Program ini digunakan untuk mencatat hasil pertandingan antara dua tim yang dimasukkan oleh pengguna. Pengguna diminta untuk memasukkan nama tim A dan tim B, lalu memasukkan skor untuk setiap pertandingan. Jika skor negatif dimasukkan, program akan berhenti dan menampilkan pesan "Pertandingan selesai". Berdasarkan skor yang dimasukkan, program menentukan pemenang atau jika pertandingan berakhir seri. Setelah semua pertandingan selesai, program menampilkan daftar tim yang menang di setiap pertandingan, termasuk jika ada hasil seri. Program ini menggunakan array untuk menyimpan rekap hasil pertandingan.
@@ -656,8 +664,10 @@ func main() {
 		
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/76cdcaef-dd9d-4e5a-98b8-25abd60d955d)
 
 ### Full code Screenshot:
+![code](https://github.com/user-attachments/assets/970bf7b7-fccd-4d40-9ec0-4733264945b0)
 
 ### Deskripsi Program : 
 Program ini digunakan untuk menerima input teks dari pengguna, kemudian mengecek apakah teks tersebut merupakan palindrome. Program ini juga menampilkan teks asli dan versi terbaliknya. Pada fungsi pertama, teks yang dimasukkan pengguna disimpan dalam array hingga tanda titik (`.`) ditemukan sebagai penanda akhir input. Fungsi kedua digunakan untuk menampilkan teks dalam array, baik dalam urutan aslinya maupun setelah dibalik. Fungsi selanjutnya membalikkan urutan karakter dalam array dan menghasilkan teks terbalik. Terakhir, program memeriksa apakah teks yang dimasukkan sama ketika dibaca dari depan dan belakang, lalu menampilkan hasilnya dengan teks asli dan yang terbalik.
