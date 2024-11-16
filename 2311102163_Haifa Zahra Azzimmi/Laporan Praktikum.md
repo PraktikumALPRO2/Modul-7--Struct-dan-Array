@@ -143,3 +143,78 @@ func main() {
     fmt.Println("City:", p.City)
 }
 ```
+
+## Guided 
+
+### 1. Program sederhana untuk menghitung lama waktu parkir berdasarkan waktu kedatangan dan waktu pulang.
+
+### Source Code :
+
+```go
+// Haifa Zahra Azzimmi
+// 2311102163
+// S1 IF 11 5
+
+
+```
+
+### Output:
+
+### Full code Screenshot :
+
+### Deskripsi Program : 
+
+
+### Algoritma Program :
+
+### Cara Kerja Program :
+
+### 2. Program sederhana untuk validasi duplikasi nama pada daftar teman.
+
+### Source Code :
+
+```go
+// Haifa Zahra Azzimmi
+// 2311102163
+// S1 IF 11 5
+
+```
+
+### Output:
+
+### Full code Screenshot :
+
+### Deskripsi Program : 
+
+
+### Algoritma Program :
+
+
+### Cara Kerja Program :
+
+
+### 3. Program sederhana untuk menampilkan daftar harga buah menggunakan map.
+
+### Source Code :
+
+```go
+// Haifa Zahra Azzimmi
+// 2311102163
+// S1 IF 11 5
+
+package main
+
+
+```
+
+### Output:
+
+### Full code Screenshot :
+
+### Deskripsi Program : 
+
+
+### Algoritma Program :
+
+### Cara Kerja Program :
+
