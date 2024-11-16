@@ -242,7 +242,15 @@ func main() {
 
 Program ini berfungsi untuk menentukan letak sebuah titik sembarang terhadap dua lingkaran. Input yang diperlukan adalah koordinat pusat dan jari-jari kedua lingkaran, serta koordinat titik yang akan diperiksa. Program akan menghitung jarak titik tersebut ke pusat masing-masing lingkaran dengan rumus Euclidean, lalu membandingkannya dengan jari-jari lingkaran. Hasil perbandingan tersebut akan digunakan untuk menentukan apakah titik berada di dalam lingkaran pertama, lingkaran kedua, kedua lingkaran, atau justru di luar keduanya. Hasil akhirnya kemudian ditampilkan.
 
-### 2. 
+### 2. Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilai. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa informasi berikut:<br/>
+### a. Menampilkan keseluruhan isi dari array.<br/>
+### b. Menampilkan elemen-elemen array dengan indeks ganjil saja.<br/>
+### c. Menampilkan elemen-elemen array dengan indeks genap saja (asumsi indeks ke-0 adalah genap).<br/>
+### d. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x. x bisa diperoleh dari masukan pengguna.<br/>
+### e. Menghapus elemen array pada indeks tertentu, asumsi indeks yang hapus selalu valid. Tampilkan keseluruhan isi dari arraynya, pastikan data yang dihapus tidak tampil.<br/>
+### f. Menampilkan rata-rata dari bilangan yang ada di dalam array.<br/>
+### g. Menampilkan standar deviasi atau simpangan baku dari bilangan yang ada di dalam array tersebut.<br/>
+### h. Menampilkan frekuensi dari suatu bilangan tertentu di dalam array yang telah diisi tersebut.<br/>
 
 ```go
 package main
