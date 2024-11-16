@@ -138,7 +138,7 @@ func main() {
 
 Program ini menambahkan nama baru ke daftar teman, tapi hanya jika belum ada di dalamnya. Nama baru dicek menggunakan fungsi sudahAda. Jika belum ada, nama ditambahkan; jika sudah ada, program memberi pemberitahuan. Hasil akhirnya adalah daftar teman yang diperbarui.
 
-## 2. Program Map
+### 2. Program Map
 
 ```go
 // Guided 2 - Map
@@ -175,6 +175,72 @@ func main() {
 Program ini menyimpan daftar harga buah menggunakan map dengan nama buah sebagai kunci dan harga sebagai nilai. Program pertama-tama menampilkan harga semua buah yang ada dalam map. Kemudian, program mencari harga buah Mangga dan menampilkannya. Jika buah Mangga tidak ada, program akan memberi tahu bahwa buah tersebut tidak ditemukan dalam daftar.
 
 ## III. UNGUIDED
+
+### 1. Suatu lingkaran didefinisikan dengan koordinat titik pusat (cx,cy) dengan radius r. Apabila diberikan dua buah lingkaran, maka tentukan posisi sebuah titik sembarang (x,y) berdasarkan dua lingkaran tersebut. Gunakan tipe bentukan titik untuk menyimpan koordinat, dan tipe bentukan lingkaran untuk menyimpan titik pusat lingkaran dan radiusnya. <br> Masukan terdiri dari beberapa tiga baris. Baris pertama dan kedua adalah koordinat titik pusat dan radius dari lingkaran 1 dan lingkaran 2, sedangkan baris ketiga adalah koordinat titik sembarang. Asumsi sumbu x dan y dari semua titik dan juga radius direpresentasikan dengan bilangan bulat.<br/> Keluaran berupa string yang menyatakan posisi titik "Titik di dalam lingkaran 1 dan 2", "Titik di dalam lingkaran 1", "Titik di dalam lingkaran 2", atau "Titik di luar lingkaran 1 dan 2". <br/> Fungsi untuk menghitung jarak titik (a,b) dan (c,d) di mana rumus jarak adalah:<br/> ![image](https://github.com/user-attachments/assets/1ec76514-808a-436f-9d61-a908461f0954) <br/> Dan juga fungsi untuk menentukan posisi sebuah titik sembarang berada di dalam suatu lingkaran atau tidak.<br/> ![image](https://github.com/user-attachments/assets/862f3db5-0399-4b10-a06b-08f053461f68)
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+// Struct untuk merepresentasikan titik
+type Titik struct {
+	x, y int
+}
+
+// Struct untuk merepresentasikan lingkaran
+type Lingkaran struct {
+	titikPusat Titik
+	radius     int
+}
+
+// Fungsi untuk menghitung jarak antara dua titik
+func jarak(p, q Titik) float64 {
+	return math.Sqrt(math.Pow(float64(p.x-q.x), 2) + math.Pow(float64(p.y-q.y), 2))
+}
+
+// Fungsi untuk mengecek apakah sebuah titik berada di dalam lingkaran
+func didalam(c Lingkaran, p Titik) bool {
+	return jarak(c.titikPusat, p) <= float64(c.radius)
+}
+
+func main() {
+	// Input lingkaran 1 dan 2
+	var cx1, cy1, r1 int
+	var cx2, cy2, r2 int
+	fmt.Scan(&cx1, &cy1, &r1) // Input lingkaran 1
+	fmt.Scan(&cx2, &cy2, &r2) // Input lingkaran 2
+
+	lingkaran1 := Lingkaran{Titik{cx1, cy1}, r1}
+	lingkaran2 := Lingkaran{Titik{cx2, cy2}, r2}
+
+	// Input titik sembarang
+	var x, y int
+	fmt.Scan(&x, &y)
+	titik := Titik{x, y}
+
+	// Menentukan posisi titik
+	inLingkaran1 := didalam(lingkaran1, titik)
+	inLingkaran2 := didalam(lingkaran2, titik)
+
+	if inLingkaran1 && inLingkaran2 {
+		fmt.Println("Titik di dalam lingkaran 1 dan 2")
+	} else if inLingkaran1 {
+		fmt.Println("Titik di dalam lingkaran 1")
+	} else if inLingkaran2 {
+		fmt.Println("Titik di dalam lingkaran 2")
+	} else {
+		fmt.Println("Titik di luar lingkaran 1 dan 2")
+	}
+}
+
+```
+## Output: ![image](https://github.com/user-attachments/assets/d976d4dc-281b-4bcf-a44d-39d2515ddda5)
+
+Program ini berfungsi untuk menentukan letak sebuah titik sembarang terhadap dua lingkaran. Input yang diperlukan adalah koordinat pusat dan jari-jari kedua lingkaran, serta koordinat titik yang akan diperiksa. Program akan menghitung jarak titik tersebut ke pusat masing-masing lingkaran dengan rumus Euclidean, lalu membandingkannya dengan jari-jari lingkaran. Hasil perbandingan tersebut akan digunakan untuk menentukan apakah titik berada di dalam lingkaran pertama, lingkaran kedua, kedua lingkaran, atau justru di luar keduanya. Hasil akhirnya kemudian ditampilkan.
 
 
 
