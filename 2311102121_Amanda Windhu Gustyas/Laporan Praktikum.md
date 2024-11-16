@@ -242,6 +242,97 @@ func main() {
 
 Program ini berfungsi untuk menentukan letak sebuah titik sembarang terhadap dua lingkaran. Input yang diperlukan adalah koordinat pusat dan jari-jari kedua lingkaran, serta koordinat titik yang akan diperiksa. Program akan menghitung jarak titik tersebut ke pusat masing-masing lingkaran dengan rumus Euclidean, lalu membandingkannya dengan jari-jari lingkaran. Hasil perbandingan tersebut akan digunakan untuk menentukan apakah titik berada di dalam lingkaran pertama, lingkaran kedua, kedua lingkaran, atau justru di luar keduanya. Hasil akhirnya kemudian ditampilkan.
 
+### 2. 
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	// Input jumlah elemen array
+	var n int
+	fmt.Print("Masukkan jumlah elemen array: ")
+	fmt.Scan(&n)
+
+	// Input elemen array
+	array := make([]int, n)
+	fmt.Println("Masukkan elemen array:")
+	for i := 0; i < n; i++ {
+		fmt.Scan(&array[i])
+	}
+
+	// a. Menampilkan keseluruhan isi array
+	fmt.Println("a. Keseluruhan isi array:", array)
+
+	// b. Menampilkan elemen-elemen array dengan indeks ganjil saja
+	fmt.Print("b. Elemen dengan indeks ganjil: ")
+	for i := 1; i < n; i += 2 {
+		fmt.Print(array[i], " ")
+	}
+	fmt.Println()
+
+	// c. Menampilkan elemen-elemen array dengan indeks genap saja
+	fmt.Print("c. Elemen dengan indeks genap: ")
+	for i := 0; i < n; i += 2 {
+		fmt.Print(array[i], " ")
+	}
+	fmt.Println()
+
+	// d. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x
+	var x int
+	fmt.Print("Masukkan nilai x untuk indeks kelipatan: ")
+	fmt.Scan(&x)
+	fmt.Print("d. Elemen dengan indeks kelipatan", x, ": ")
+	for i := x; i < n; i += x {
+		fmt.Print(array[i], " ")
+	}
+	fmt.Println()
+
+	// e. Menghapus elemen array pada indeks tertentu
+	var delIndex int
+	fmt.Print("Masukkan indeks elemen yang akan dihapus: ")
+	fmt.Scan(&delIndex)
+	if delIndex >= 0 && delIndex < n {
+		array = append(array[:delIndex], array[delIndex+1:]...)
+		fmt.Println("e. Array setelah penghapusan elemen:", array)
+	} else {
+		fmt.Println("Indeks tidak valid!")
+	}
+
+	// f. Menampilkan rata-rata dari elemen array
+	sum := 0
+	for _, val := range array {
+		sum += val
+	}
+	avg := float64(sum) / float64(len(array))
+	fmt.Printf("f. Rata-rata elemen array: %.2f\n", avg)
+
+	// g. Menampilkan standar deviasi dari elemen array
+	var variance float64
+	for _, val := range array {
+		variance += math.Pow(float64(val)-avg, 2)
+	}
+	stdDev := math.Sqrt(variance / float64(len(array)))
+	fmt.Printf("g. Standar deviasi elemen array: %.2f\n", stdDev)
+
+	// h. Menampilkan frekuensi dari setiap bilangan dalam array
+	freq := make(map[int]int)
+	for _, val := range array {
+		freq[val]++
+	}
+	fmt.Println("h. Frekuensi elemen dalam array:")
+	for key, val := range freq {
+		fmt.Printf("   %d: %d kali\n", key, val)
+	}
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/3c92f1e8-00e6-411f-a051-6fccdcd50f41)
+
+Program ini mengolah array dengan beberapa operasi, seperti menampilkan seluruh elemen, elemen dengan indeks ganjil/genap, elemen dengan indeks kelipatan tertentu, menghapus elemen, menghitung rata-rata dan standar deviasi, serta menghitung frekuensi tiap elemen dalam array. Pengguna bisa memasukkan nilai array dan indeks yang ingin dimanipulasi.
 
 
 
