@@ -55,7 +55,7 @@
 # <strong> Dasar Teori </strong>
 
 <strong><h2>Definisi Array</h2></strong>
-Array adalah kumpulan data yang memiliki tipe yang sama dan disimpan dalam memori secara berurutan. Setiap elemen dalam array dapat diakses melalui indeks.
+array digunakan untuk menyimpan beberapa nilai dengan tipe data yang sama ke dalam satu variabel
 
 ### <strong> Beberapa karakteristik utama dari Array:
 - Semua elemen memiliki tipe data yang sama.
@@ -63,11 +63,24 @@ Array adalah kumpulan data yang memiliki tipe yang sama dan disimpan dalam memor
 - Setiap elemen dapat diakses dengan menggunakan indeks numerik, di mana indeks pertama adalah 0.
 
 <strong><h2>Definisi Struct</h2></strong>
-Array adalah kumpulan data yang memiliki tipe yang sama dan disimpan dalam memori secara berurutan. Setiap elemen dalam array dapat diakses melalui indeks.
+Digunakan untuk menggabungkan nilai-nilai dengan tipe data yang berbeda ke dalam satu variabel. Struct dapat berisi berbagai tipe data, seperti integer, string, dan boolean. Struct mirip dengan kelas dalam pemrograman berorientasi objek, di mana Anda dapat menentukan tipe kompleks Anda sendiri dengan beberapa bidang.
 
-### <strong> Beberapa karakteristik utama dari Struct:
-- Dapat menyimpan variabel dengan tipe data yang berbeda.
-- Digunakan untuk membuat tipe data yang lebih kompleks, seperti data mahasiswa yang terdiri dari nama, usia, dan nilai.
+### <strong> Mengakses nilai struct:
+Untuk mengakses nilai milik suatu instance dari struct, Anda cukup menggunakan notasi titik diikuti dengan nama field. Perhatikan contoh berikut:
+
+```go
+fmt.Println(person.name)
+fmt.Println(person.age)
+fmt.Println(person.email)
+```
+Sebagai hasil dari operasi di atas, kita melihat output berikut:
+
+```go
+Andy Brinker
+40
+andy@example.com
+```
+
 
 
 # <strong> Guided </strong>
@@ -77,8 +90,8 @@ Array adalah kumpulan data yang memiliki tipe yang sama dan disimpan dalam memor
 
 ### Source Code
 ```go
-//Rangga Pradarrell Fathi
-//2311102200
+//Aditya Sulistiawan
+//2311102193
 //IF-11-05
 package main 
 
@@ -104,14 +117,30 @@ durasi.detik = lParkir % 3600 % 60
 fmt.Printf("Lama parkir: %d jam %d menit %d detik", durasi.jam, durasi.menit, durasi.detik)
 }
 ```
+### Screenshot Source Code
+![Source code](https://github.com/user-attachments/assets/909cf2e2-3f8a-4ad9-9191-0b01436a05ab)
+
 
 ### Screenshot Output
-![image](https://github.com/user-attachments/assets/2e8f2f66-e80b-4bd6-863d-2a15c542bbbe)
+![Gui1](https://github.com/user-attachments/assets/98694a45-5f6a-4093-bdc8-bd04d1868d99)
 
 
-### Deskripsi Program
-Program di atas menghitung durasi waktu parkir dalam jam, menit, dan detik. Pengguna memasukkan waktu masuk (saat memulai parkir) dan waktu keluar (saat meninggalkan parkir) dalam format jam, menit, dan detik, kemudian program akan menghitung selisih waktu antara kedua waktu tersebut untuk mendapatkan durasi parkir dalam format yang sama.
+#### Deskripsi Program
+Program di atas menghitung berapa lama kendaraan parkir dalam jam, menit, dan detik. Pengguna harus menginput waktu masuk (saat mulai parkir) dan waktu keluar (saat selesai parkir) dalam format jam, menit, dan detik. Kemudian program akan menghitung berapa lama mobil parkir dengan menghitung selisih waktu antara kedua waktu tersebut dalam format yang sama.
 
+#### Algoritma Program
+1. Mulai
+2. Deklarasi Variabel
+3. Input Data
+   - Minta pengguna menginput jam, menit, dan detik untuk waktu masuk 
+   - Minta pengguna menginput jam, menit, dan detik untuk waktu keluar 
+4. Hitung Total Detik
+5. Hitung Lama Parkir
+6. Output Hasil
+7. Selesai
+
+cara kerja program : 
+Program ini dibuat untuk menghitung berapa lama mobil parkir berdasarkan waktu masuk dan keluar yang dimasukkan oleh pengguna. Langkah pertama adalah memasukkan waktu parkir dan waktu pulang dalam format jam, menit, dan detik. Setelah itu, program akan mengubah waktu tersebut menjadi jumlah detik agar perhitungan lebih mudah. Dengan begini, program dapat menghitung beda waktu antara pulang dan parkir, lalu diubah ke format jam, menit, dan detik. Akhirnya, pengguna dapat melihat hasil parkir mereka dengan jelas.
 
 ## Guided - 2
 #### Source Code
@@ -155,6 +184,9 @@ func main() {
 	fmt.Println("Daftar Teman:", daftarTeman)
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Output
 ![image](https://github.com/user-attachments/assets/41a822b4-e57b-4d0d-9d88-be77b537dc9e)
 
@@ -190,6 +222,9 @@ func main() {
 	fmt.Print("Harga buah Mangga = ", hargaBuah["Mangga"])
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Output
 ![image](https://github.com/user-attachments/assets/9ad9ce96-7aa3-441f-aee7-5dd903c01450)
 
@@ -235,6 +270,9 @@ func main() {
 	fmt.Println()
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot output
 ![Screenshot 2024-11-03 151606](https://github.com/user-attachments/assets/b97174e8-8961-4852-b73b-d89495c866ff)
 
@@ -278,6 +316,9 @@ func main() {
 	printBintang(n)
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Code
 ![Screenshot 2024-11-03 151746](https://github.com/user-attachments/assets/7196b886-e329-4593-8bba-2c06ee01cf8e)
 
@@ -323,6 +364,9 @@ func main() {
 	fmt.Println()
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Code
 ![Screenshot 2024-11-03 151842](https://github.com/user-attachments/assets/9c358852-5498-4db0-81df-c70012166e43)
 
@@ -368,6 +412,9 @@ func main() {
 	fmt.Println()
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Code
 ![Screenshot 2024-11-03 151919](https://github.com/user-attachments/assets/b64f5293-30c3-4bf2-ad4f-2164e531efbc)
 
@@ -409,6 +456,9 @@ func main() {
 	cetakBilanganGanjil(n)
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Code
 ![Screenshot 2024-11-03 152016](https://github.com/user-attachments/assets/57d34524-189b-4327-bfae-035aad3bfc99)
 
@@ -458,6 +508,9 @@ func main() {
 	fmt.Printf("%d pangkat %d = %d\n", x, y, hasil)
 }
 ```
+### Screenshot Source Code
+
+
 ### Screenshot Code
 ![Screenshot 2024-11-03 212955](https://github.com/user-attachments/assets/99dd1e1d-e8a8-41b6-81fa-a2d7ac049834)
 
