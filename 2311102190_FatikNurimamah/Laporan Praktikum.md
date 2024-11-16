@@ -211,7 +211,7 @@ func main() {
 ![image](https://github.com/user-attachments/assets/68227973-95dd-4f4d-bedd-f37dcf91a8ef)
 
 ### Deskripsi Program : 
-Program di atas adalah program yang digunakan untuk menghitung durasi parkir kendaraan. Program ini menggunakan struktur data `waktu` yang berisi atribut `jam`, `menit`, dan `detik`. Pertama, program meminta input untuk waktu kedatangan dan waktu kepulangan kendaraan dalam satuan jam, menit, dan detik. Kedua, waktu kedatangan dan kepulangan dikonversi ke dalam detik untuk memudahkan perhitungan selisihnya sebagai durasi parkir. Setelah itu, durasi parkir dalam detik diubah kembali menjadi jam, menit, dan detik agar hasilnya lebih mudah dipahami, kemudian hasil tersebut ditampilkan ke layar.
+Program tersebut adalah program yang digunakan untuk menghitung durasi parkir kendaraan. Program ini menggunakan struktur data `waktu` yang berisi atribut `jam`, `menit`, dan `detik`. Pertama, program meminta input untuk waktu kedatangan dan waktu kepulangan kendaraan dalam satuan jam, menit, dan detik. Kedua, waktu kedatangan dan kepulangan dikonversi ke dalam detik untuk memudahkan perhitungan selisihnya sebagai durasi parkir. Setelah itu, durasi parkir dalam detik diubah kembali menjadi jam, menit, dan detik agar hasilnya lebih mudah dipahami, kemudian hasil tersebut ditampilkan ke layar.
 
 ### 2. Program sederhana untuk validasi duplikasi nama pada daftar teman
 
@@ -264,7 +264,7 @@ func main() {
 ![image](https://github.com/user-attachments/assets/55d9c939-f418-4663-9c4e-ec3b3b3fa866)
 
 ### Deskripsi Program : 
-Program di atas adalah program yang digunakan untuk mengelola daftar teman tanpa duplikasi nama. Program ini diawali dengan slice `daftarTeman` berisi beberapa nama awal, seperti "Andi," "Budi," dan "Cici," serta `namaBaru` yang memuat nama-nama tambahan yang ingin ditambahkan. Fungsi `sudahAda` dibuat untuk memeriksa apakah suatu nama sudah ada di dalam `daftarTeman`, dan mengembalikan `true` jika ada atau `false` jika tidak. Di dalam fungsi `main`, program memeriksa setiap nama di `namaBaru`: jika nama belum ada di `daftarTeman`, nama tersebut ditambahkan menggunakan `append`; namun, jika sudah ada, program menampilkan pesan bahwa nama tersebut sudah terdaftar. Di akhir program, daftar teman yang telah diperbarui dicetak ke layar, dan memastikan tidak ada nama yang terduplikasi.
+Program tersebut adalah program yang digunakan untuk mengelola daftar teman tanpa duplikasi nama. Program ini diawali dengan slice `daftarTeman` berisi beberapa nama awal, seperti "Andi," "Budi," dan "Cici," serta `namaBaru` yang memuat nama-nama tambahan yang ingin ditambahkan. Fungsi `sudahAda` dibuat untuk memeriksa apakah suatu nama sudah ada di dalam `daftarTeman`, dan mengembalikan `true` jika ada atau `false` jika tidak. Di dalam fungsi `main`, program memeriksa setiap nama di `namaBaru`: jika nama belum ada di `daftarTeman`, nama tersebut ditambahkan menggunakan `append`; namun, jika sudah ada, program menampilkan pesan bahwa nama tersebut sudah terdaftar. Di akhir program, daftar teman yang telah diperbarui dicetak ke layar, dan memastikan tidak ada nama yang terduplikasi.
 
 ### 3. Program sederhana untuk menampilkan daftar harga buah menggunakan map.
 ### Source Code :
@@ -301,7 +301,7 @@ func main() {
 ![image](https://github.com/user-attachments/assets/976f9ee5-6f16-4dae-9bb3-a248639e299a)
 
 ### Deskripsi Program : 
-Program ini menggunakan `map` dalam bahasa Go untuk menyimpan data harga buah-buahan. Struktur `map` dengan nama `hargaBuah` memiliki kunci berupa nama buah (`string`) dan nilai berupa harga buah (`int`). `hargaBuah` diinisialisasi dengan beberapa data, seperti "Apel" dengan harga Rp5000, "Pisang" Rp3000, dan "Mangga" Rp7000. Program kemudian menggunakan loop `for` dengan `range` untuk menampilkan setiap buah beserta harganya. Setelah itu, harga khusus untuk "Mangga" ditampilkan secara langsung dengan mengakses kuncinya di `map`. Program ini menunjukkan bagaimana `map` memudahkan penyimpanan dan akses cepat terhadap data harga buah-buahan.
+Program tersebut menggunakan `map` dalam bahasa Go untuk menyimpan data harga buah-buahan. Struktur `map` dengan nama `hargaBuah` memiliki kunci berupa nama buah (`string`) dan nilai berupa harga buah (`int`). `hargaBuah` diinisialisasi dengan beberapa data, seperti "Apel" dengan harga Rp5000, "Pisang" Rp3000, dan "Mangga" Rp7000. Program kemudian menggunakan loop `for` dengan `range` untuk menampilkan setiap buah beserta harganya. Setelah itu, harga khusus untuk "Mangga" ditampilkan secara langsung dengan mengakses kuncinya di `map`. Program ini menunjukkan bagaimana `map` memudahkan penyimpanan dan akses cepat terhadap data harga buah-buahan.
 
 
 
@@ -383,7 +383,7 @@ func main() {
 ![code](https://github.com/user-attachments/assets/cf4a5aee-23fd-4ddf-81d9-7f16d7223dbe)
 
 ### Deskripsi Program : 
-Program ini adalah program yang digunakan untuk menentukan apakah sebuah titik berada di dalam salah satu atau kedua lingkaran. Lingkaran didefinisikan sebagai struct dengan properti berupa titik pusat dan radius, sementara titik direpresentasikan sebagai struct dengan koordinat x dan y. Program meminta input berupa koordinat titik pusat dan radius untuk dua lingkaran, serta koordinat sebuah titik sembarang. Fungsi `jarakAntarTitik` menghitung jarak antara dua titik, yang kemudian digunakan oleh fungsi `cekTitikDiDalam` untuk mengecek apakah titik tersebut berada di dalam lingkaran. Berdasarkan hasil pengecekan, program menampilkan output apakah titik berada di dalam lingkaran pertama, kedua, keduanya, atau di luar kedua lingkaran.
+Program tersebut adalah program yang digunakan untuk menentukan apakah sebuah titik berada di dalam salah satu atau kedua lingkaran. Lingkaran didefinisikan sebagai struct dengan properti berupa titik pusat dan radius, sementara titik direpresentasikan sebagai struct dengan koordinat x dan y. Program meminta input berupa koordinat titik pusat dan radius untuk dua lingkaran, serta koordinat sebuah titik sembarang. Fungsi `jarakAntarTitik` menghitung jarak antara dua titik, yang kemudian digunakan oleh fungsi `cekTitikDiDalam` untuk mengecek apakah titik tersebut berada di dalam lingkaran. Berdasarkan hasil pengecekan, program menampilkan output apakah titik berada di dalam lingkaran pertama, kedua, keduanya, atau di luar kedua lingkaran.
 
 
 ### 2.  Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilai. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa informasi berikut:
@@ -522,7 +522,7 @@ func main() {
 ![code](https://github.com/user-attachments/assets/52b620b1-e1fb-4e90-b8dc-87271317e3ba)
 
 ### Deskripsi Program : 
-Program ini dibuat untuk mengelola array berisi bilangan bulat dan memiliki beberapa operasi yang dapat dilakukan. Pertama, pengguna akan diminta untuk mengisi jumlah elemen dalam array serta memasukkan setiap angkanya secara satu per satu. Setelah data terisi, pengguna bisa memilih beberapa opsi seperti menampilkan semua isi array, menampilkan elemen dengan indeks ganjil atau genap, dan menampilkan elemen pada indeks tertentu yang merupakan kelipatan dari angka yang ditentukan. Selain itu, program juga memiliki operasi untuk menghapus elemen pada indeks tertentu, menghitung rata-rata dan standar deviasi dari seluruh elemen, serta mencari seberapa sering suatu angka muncul dalam array. Program ini dirancang dengan antarmuka yang sederhana, sehingga pengguna dapat dengan mudah memilih opsi dan langsung melihat hasilnya.
+Program tersebut dibuat untuk mengelola array berisi bilangan bulat dan memiliki beberapa operasi yang dapat dilakukan. Pertama, pengguna akan diminta untuk mengisi jumlah elemen dalam array serta memasukkan setiap angkanya secara satu per satu. Setelah data terisi, pengguna bisa memilih beberapa opsi seperti menampilkan semua isi array, menampilkan elemen dengan indeks ganjil atau genap, dan menampilkan elemen pada indeks tertentu yang merupakan kelipatan dari angka yang ditentukan. Selain itu, program juga memiliki operasi untuk menghapus elemen pada indeks tertentu, menghitung rata-rata dan standar deviasi dari seluruh elemen, serta mencari seberapa sering suatu angka muncul dalam array. Program ini dirancang dengan antarmuka yang sederhana, sehingga pengguna dapat dengan mudah memilih opsi dan langsung melihat hasilnya.
 
   
 ### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga. Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja. Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.
@@ -588,7 +588,7 @@ func main() {
 ![code](https://github.com/user-attachments/assets/6a4c881c-119a-4c4b-98f6-8bcd8433b521)
 
 ### Deskripsi Program : 
-Program ini digunakan untuk mencatat hasil pertandingan antara dua tim yang dimasukkan oleh pengguna. Pengguna diminta untuk memasukkan nama tim A dan tim B, lalu memasukkan skor untuk setiap pertandingan. Jika skor negatif dimasukkan, program akan berhenti dan menampilkan pesan "Pertandingan selesai". Berdasarkan skor yang dimasukkan, program menentukan pemenang atau jika pertandingan berakhir seri. Setelah semua pertandingan selesai, program menampilkan daftar tim yang menang di setiap pertandingan, termasuk jika ada hasil seri. Program ini menggunakan array untuk menyimpan rekap hasil pertandingan.
+Program tersebut digunakan untuk mencatat hasil pertandingan antara dua tim yang dimasukkan oleh pengguna. Pengguna diminta untuk memasukkan nama tim A dan tim B, lalu memasukkan skor untuk setiap pertandingan. Jika skor negatif dimasukkan, program akan berhenti dan menampilkan pesan "Pertandingan selesai". Berdasarkan skor yang dimasukkan, program menentukan pemenang atau jika pertandingan berakhir seri. Setelah semua pertandingan selesai, program menampilkan daftar tim yang menang di setiap pertandingan, termasuk jika ada hasil seri. Program ini menggunakan array untuk menyimpan rekap hasil pertandingan.
 
 
 ### 4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan isi array dan memeriksa apakah membentuk palindrom
@@ -680,7 +680,7 @@ func main() {
 ![code](https://github.com/user-attachments/assets/970bf7b7-fccd-4d40-9ec0-4733264945b0)
 
 ### Deskripsi Program : 
-Program ini digunakan untuk menerima input teks dari pengguna, kemudian mengecek apakah teks tersebut merupakan palindrome. Program ini juga menampilkan teks asli dan versi terbaliknya. Pada fungsi pertama, teks yang dimasukkan pengguna disimpan dalam array hingga tanda titik (`.`) ditemukan sebagai penanda akhir input. Fungsi kedua digunakan untuk menampilkan teks dalam array, baik dalam urutan aslinya maupun setelah dibalik. Fungsi selanjutnya membalikkan urutan karakter dalam array dan menghasilkan teks terbalik. Terakhir, program memeriksa apakah teks yang dimasukkan sama ketika dibaca dari depan dan belakang, lalu menampilkan hasilnya dengan teks asli dan yang terbalik.
+Program tersebut digunakan untuk menerima input teks dari pengguna, kemudian mengecek apakah teks tersebut merupakan palindrome. Program ini juga menampilkan teks asli dan versi terbaliknya. Pada fungsi pertama, teks yang dimasukkan pengguna disimpan dalam array hingga tanda titik (`.`) ditemukan sebagai penanda akhir input. Fungsi kedua digunakan untuk menampilkan teks dalam array, baik dalam urutan aslinya maupun setelah dibalik. Fungsi selanjutnya membalikkan urutan karakter dalam array dan menghasilkan teks terbalik. Terakhir, program memeriksa apakah teks yang dimasukkan sama ketika dibaca dari depan dan belakang, lalu menampilkan hasilnya dengan teks asli dan yang terbalik.
 
 ## Daftar Pustaka
 [1] Agung, N. (n.d.). Array. Retrieved from Dasar Pemrograman Golang: https://dasarpemrogramangolang.novalagung.com/A-array.html
