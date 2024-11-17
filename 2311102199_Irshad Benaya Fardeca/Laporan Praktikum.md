@@ -1,4 +1,4 @@
-![Screenshot 2024-11-17 212021](https://github.com/user-attachments/assets/6405a2bd-7f7a-41c3-91ff-17228beeb193)![Screenshot 2024-11-17 212021](https://github.com/user-attachments/assets/1d530163-142a-44db-944e-ac4ac9c312be)<h2 align="center">LAPORAN PAKTIKUM ALGORITMA DAN PEMROGRAMAN 2</h2>
+<h2 align="center">LAPORAN PAKTIKUM ALGORITMA DAN PEMROGRAMAN 2</h2>
 <h2 align="center">MODUL 7</h2>
 <h2 align="center">Struct dan Array</h2>
 
