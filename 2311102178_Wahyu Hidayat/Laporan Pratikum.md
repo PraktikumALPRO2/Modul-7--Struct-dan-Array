@@ -1,4 +1,4 @@
-<h2 align="center"><strong>LAPORAN PRAKTIKUM</strong></h2>
+![Screenshot 2024-11-17 075521](https://github.com/user-attachments/assets/c33b45a8-d935-4702-bcef-1cbe83291261)![Screenshot 2024-11-17 074851](https://github.com/user-attachments/assets/65477138-bb63-49e2-b89d-2e2fa9029a8e)<h2 align="center"><strong>LAPORAN PRAKTIKUM</strong></h2>
 <h2 align="center"><strong>ALGORITMA DAN PEMROGRAMAN 2</strong></h2>
 
 <br>
@@ -72,590 +72,597 @@ struct Mahasiswa kelas[30];
 Penggunaan ini memungkinkan kita untuk mengelola data dalam format yang terstruktur dan teratur, serta lebih mudah diakses dalam berbagai skenario pemrograman [7].
 
 ## II. GUIDED
-## 1. Membuat baris bilangan dari n hingga 1
-
-#### Source Code
-```go
-package main
-
-import "fmt"
-
-func main(){
-	var n int
-	fmt.Scan(&n)
-	baris(n)
-}
-
-func baris(bilangan int){
-	if bilangan == 1 {
-		fmt.Println(1)
-	}else{
-		fmt.Println(bilangan)
-		baris(bilangan - 1)
-	}
-}
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 184444](https://github.com/user-attachments/assets/12ec0aa1-0e7b-49c9-b7ad-28501d5b7e23)
-
-
-
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 184455](https://github.com/user-attachments/assets/1edb7fb1-1a9d-41ec-8cb2-cb174362ca57)
-
-
-
-#### Deskripsi Program
-Program ini adalah program rekursif sederhana dalam bahasa Go yang menerima input berupa bilangan bulat n dari pengguna, lalu mencetak deretan angka dari n hingga 1. Program ini menggunakan fungsi baris, yang memanggil dirinya sendiri (rekursif) untuk mengurangi bilangan hingga mencapai nilai 1.
-
-#### Algoritma Program
-1. Program meminta input dari pengguna dan menyimpannya dalam variabel n.
-2. Fungsi baris dipanggil dengan parameter n.
-3. Dalam fungsi baris:
-   - Jika bilangan sama dengan 1, program mencetak 1 dan berhenti (kondisi dasar / base case).
-   - Jika bilangan lebih besar dari 1, program mencetak nilai bilangan, kemudian memanggil dirinya sendiri dengan bilangan - 1.
-4. Proses ini berulang hingga nilai bilangan menjadi 1, lalu program berhenti.
-
-#### Cara Kerja
-1. Meminta Input: Program pertama-tama menunggu pengguna untuk memasukkan sebuah bilangan bulat n dan menyimpan input ini ke variabel n.
-2. Memanggil Fungsi Rekursif: Program memanggil fungsi baris(n).
-3. Fungsi Rekursif baris:
-   - Fungsi ini menggunakan parameter bilangan, yang awalnya adalah nilai n yang diinputkan pengguna.
-   - Kondisi Base Case: Jika bilangan == 1, fungsi mencetak 1 dan berhenti (tidak ada lagi pemanggilan rekursif).
-   - Kondisi Rekursif: Jika bilangan > 1, fungsi mencetak nilai bilangan, lalu memanggil dirinya sendiri dengan parameter bilangan - 1, yang mengurangi nilai bilangan sebesar 1 di setiap langkah hingga mencapai nilai 1.
-4. Output Program: Program mencetak nilai dari n hingga 1 secara berurutan dengan setiap pemanggilan rekursif. Jika, misalnya, pengguna memasukkan 5 sebagai input, hasilnya akan seperti ini:
-- 5
-- 4
-- 3
-- 2
-- 1
-
-## 2. Menghitung hasil penjumlahan 1 hingga n
-
+## 1. Menghitung Durasi Parkir Berdasarkan Waktu Kedatangan dan Pulang
 #### Source Code
 ```go
 package main 
-import "fmt"
-
-func penjumlahan(n int) int{
-	if n == 1 {
-		return 1
-	}else{
-		return n + penjumlahan(n-1)
-	}
-}
-
-func main(){
-	var n int
-	fmt.Scan(&n)
-	fmt.Println(penjumlahan(n))
-}
-
+import "fmt" 
+type waktu struct { 
+    jam, menit, detik int 
+} 
+ 
+func main(){ 
+    var wParkir, wPulang, durasi waktu 
+    var dParkir, dPulang, lParkir int 
+    fmt.Scan(&wParkir.jam, &wParkir.menit, &wParkir.detik) 
+    fmt.Scan(&wPulang.jam, &wPulang.menit, &wPulang.detik) 
+    dParkir = wParkir.detik + wParkir.menit*60 + wParkir.jam*3600 
+    dPulang = wPulang.detik + wPulang.menit*60 + wPulang.jam*3600 
+    lParkir = dPulang - dParkir 
+    durasi.jam = lParkir / 3600 
+    durasi.menit = lParkir % 3600 / 60 
+    durasi.detik = lParkir % 3600 % 60 
+    fmt.Printf("Lama parkir: %d jam %d menit %d detik", 
+        durasi.jam, durasi.menit, durasi.detik) 
+}  
 ```
 #### Screenshoot Source Code
-![Screenshot 2024-11-03 185336](https://github.com/user-attachments/assets/e5122cc1-3be5-427f-9db0-17af0f018a39)
+![Screenshot 2024-11-17 064624](https://github.com/user-attachments/assets/6db2201b-0817-4e8c-b1c5-a986171ee17e)
 
 
 #### Screenshoot Output
-![Screenshot 2024-11-03 185340](https://github.com/user-attachments/assets/4d287d22-3432-4c60-9a23-1af90d51cd44)
+![Screenshot 2024-11-17 064639](https://github.com/user-attachments/assets/e383294d-6cc8-407f-bc67-9602db42c479)
 
 #### Deskripsi Program
-Program ini adalah implementasi dari fungsi penjumlahan rekursif dalam bahasa Go. Program menerima input berupa bilangan bulat n dari pengguna dan menghitung jumlah dari semua bilangan bulat dari 1 hingga n. Fungsi rekursif penjumlahan dipanggil untuk menghitung hasil penjumlahan tersebut, menggunakan pendekatan rekursif untuk menambahkan bilangan satu per satu hingga mencapai bilangan 1.
+Program ini digunakan untuk menghitung durasi waktu parkir berdasarkan waktu kedatangan dan waktu pulang yang diberikan dalam format jam, menit, dan detik. Hasil durasi ditampilkan dalam satuan jam, menit, dan detik.
 
 #### Algoritma Program
-1. Program meminta input dari pengguna dan menyimpannya dalam variabel n.
-2. Fungsi penjumlahan dipanggil dengan parameter n.
-3. Dalam fungsi penjumlahan:
-   - Jika n sama dengan 1, fungsi mengembalikan 1 (ini adalah kondisi dasar).
-   - Jika n lebih besar dari 1, fungsi mengembalikan hasil penjumlahan n dan hasil dari pemanggilan penjumlahan(n-1).
-4. Hasil akhir dari penjumlahan ditampilkan ke layar.
+1. Buat struktur waktu dengan atribut jam, menit, dan detik.
+2. Baca input waktu parkir dan waktu pulang.
+3. Konversi waktu parkir dan waktu pulang ke total detik.
+4. Hitung selisih total detik untuk mendapatkan lama parkir.
+5. Konversi selisih detik ke format jam, menit, dan detik.
+6. Tampilkan hasil dalam format lama parkir.
 
 #### Cara Kerja
-1. Meminta Input: Program memulai dengan meminta pengguna untuk memasukkan sebuah bilangan bulat n.
-2. Memanggil Fungsi Rekursif: Setelah input diterima, program memanggil fungsi penjumlahan dengan nilai n sebagai argumen.
-3. Fungsi Rekursif penjumlahan:
-   - Fungsi ini menerima parameter n dan mengecek apakah n adalah 1 (kondisi dasar).
-   - Kondisi Dasar: Jika n == 1, fungsi mengembalikan 1.
-   - Kondisi Rekursif: Jika n > 1, fungsi akan mengembalikan nilai n ditambahkan dengan hasil pemanggilan penjumlahan(n-1). Ini berarti fungsi memanggil dirinya sendiri dengan parameter n-1, mengurangi nilai n setiap kali hingga mencapai 1.
-4. Output Program: Setelah semua pemanggilan fungsi selesai dan nilai dikembalikan, program mencetak hasil akhir penjumlahan ke layar. Jika pengguna memasukkan 5, hasil akhir yang ditampilkan adalah 15, yang merupakan hasil dari penjumlahan 1+2+3+4+5.
+1. Input waktu kedatangan dan pulang dalam format jam, menit, dan detik.
+2. Waktu dikonversi ke detik total.
+3. Selisih detik dihitung sebagai lama parkir.
+4. Hasil konversi selisih detik ditampilkan dalam jam, menit, dan detik.
 
-## 3. Mencari dua pangkat n atau 2^n
-
+## 2. Menambahkan Nama ke Dalam Daftar Teman Tanpa Duplikasi
 #### Source Code
 ```go
+//Guided 2 - Slice
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func pangkat(n int) int {
-	if n == 0 {
-		return 1
-	}else{
-		return 2 * pangkat(n-1)
+// Fungsi untuk mengecek apakah nama sudah ada di dalam slice
+func sudahAda(daftarTeman []string, nama string) bool {
+	for _, teman := range daftarTeman {
+		if teman == nama {
+			return true
+		}
 	}
+	return false
 }
-
-func main(){
-	var n int
-	fmt.Print("Masukkan nilai n : ")
-	fmt.Scan(&n)
-	fmt.Println("Hasil dari 2 pangkat", n, "adalah :", pangkat(n))
-}
-```
-
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 190225](https://github.com/user-attachments/assets/51cfeabf-7c5a-464b-b8e7-27c855e0eb03)
-
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 190429](https://github.com/user-attachments/assets/ea845c0c-283a-4dfa-86fa-91d664fe4bec)
-
-#### Deskripsi Program
-Program ini menghitung nilai dua pangkat n dengan menggunakan metode rekursif. Pengguna akan diminta untuk memasukkan nilai bulat n, dan program akan memberikan hasil perhitungan dua pangkat n. Fungsi yang digunakan untuk perhitungan adalah pangkat, yang akan memanggil dirinya sendiri hingga mencapai kondisi dasar.
-
-#### Algoritma Program
-1. Minta pengguna untuk memasukkan nilai bulat n.
-2. Fungsi pangkat:
-   - Jika n sama dengan nol, kembalikan satu.
-   - Jika n lebih besar dari nol, kembalikan hasil dari dua kali pangkat n dikurangi satu.
-3. Tampilkan hasil perhitungan dua pangkat n.
-#### Cara Kerja
-1. Program dimulai dengan fungsi utama.
-2. Di dalam fungsi utama, variabel n dideklarasikan untuk menyimpan input dari pengguna.
-3. Program meminta pengguna untuk memasukkan nilai n menggunakan fungsi input.
-4. Setelah mendapatkan nilai n, program memanggil fungsi pangkat untuk menghitung dua pangkat n.
-5. Fungsi pangkat bekerja dengan cara:
-   - Jika n sama dengan nol, fungsi akan mengembalikan satu.
-   - Jika n lebih besar dari nol, fungsi akan mengalikan dua dengan hasil pemanggilan fungsi pangkat dengan argumen n dikurangi satu.
-6. Proses ini akan berlanjut sampai mencapai kondisi n sama dengan nol.
-7. Hasil akhir akan dicetak ke layar dengan format yang telah ditentukan.
-
-## 4. Mencari nilai faktorial atau n!
-
-#### Source Code
-```go
-package main
-
-import "fmt"
 
 func main() {
-    var n int
-    fmt.Print("Masukkan nilai n: ")
-    fmt.Scan(&n)
-    fmt.Println("Hasil faktorial dari", n, "adalah:", faktorial(n))
-}
+	// Slice awal untuk daftar teman dengan beberapa data
+	daftarTeman := []string{"Andi", "Budi", "Cici"}
 
-func faktorial(n int) int {
-    if n == 0 || n == 1 {
-        return 1
-    } else {
-        return n * faktorial(n-1)
-    }
+	// Nama-nama baru yang ingin ditambahkan
+	namaBaru := []string{"Dewi", "Budi", "Eka"}
+
+	// Menambahkan nama baru hanya jika belum ada di daftar
+	for _, nama := range namaBaru {
+		if !sudahAda(daftarTeman, nama) {
+			daftarTeman = append(daftarTeman, nama)
+		} else {
+			fmt.Println("Nama", nama, "sudah ada dalam daftar.")
+		}
+	}
+
+	// Menampilkan daftar teman akhir
+	fmt.Println("Daftar Teman:", daftarTeman)
 }
 
 ```
-
 #### Screenshoot Source Code
-![Screenshot 2024-11-03 192747](https://github.com/user-attachments/assets/8b864e8f-c480-425d-9a08-1567a026f0a3)
-
+![Screenshot 2024-11-17 073025](https://github.com/user-attachments/assets/b7fdc65b-a535-43fe-86d2-8b40050de2b9)
 
 #### Screenshoot Output
-![Screenshot 2024-11-03 192752](https://github.com/user-attachments/assets/ac3d5ab8-d61c-4624-a26d-581eda4e942b)
+![Screenshot 2024-11-17 073034](https://github.com/user-attachments/assets/fc6e1a63-6609-4af4-a1e9-522f49e919c6)
 
 #### Deskripsi Program
-Program ini menghitung faktorial dari bilangan bulat yang dimasukkan oleh pengguna. Faktorial dari suatu bilangan n adalah hasil perkalian dari semua bilangan bulat positif dari satu hingga n. Program ini menggunakan pendekatan rekursif untuk menghitung faktorial, yang berarti fungsi akan memanggil dirinya sendiri hingga mencapai kondisi dasar.
+Program ini memanipulasi slice untuk menyimpan daftar nama teman. Nama baru akan ditambahkan ke dalam daftar hanya jika nama tersebut belum ada, sehingga menghindari duplikasi. Jika nama sudah ada, program akan memberikan notifikasi kepada pengguna.
 
 #### Algoritma Program
-1. Minta pengguna untuk memasukkan nilai bulat n.
-2. Fungsi faktorial dengan parameter n:
-   - Jika n sama dengan nol atau n sama dengan satu, kembalikan satu.
-   - Jika n lebih besar dari satu, kembalikan hasil dari n dikali dengan pemanggilan fungsi faktorial dengan argumen n dikurangi satu.
-3. Tampilkan hasil perhitungan faktorial dari n.
+1. Buat slice awal yang berisi daftar nama teman.
+2. Definisikan fungsi sudahAda untuk memeriksa apakah nama tertentu sudah ada di dalam slice.
+3. Buat slice baru yang berisi nama-nama tambahan.
+4. Periksa setiap nama dalam slice baru:
+   - Jika belum ada dalam daftar teman, tambahkan ke slice.
+   - Jika sudah ada, tampilkan pesan bahwa nama tersebut sudah ada.
+5. Tampilkan daftar teman yang sudah diperbarui.
 
 #### Cara Kerja
-1. Program dimulai dari fungsi utama.
-2. Di dalam fungsi utama, variabel n dideklarasikan untuk menyimpan input dari pengguna.
-3. Program meminta pengguna untuk memasukkan nilai n menggunakan fungsi input.
-4. Setelah mendapatkan nilai n, program memanggil fungsi faktorial untuk menghitung faktorial.
-5. Fungsi faktorial bekerja dengan cara:
-   - Jika nilai n sama dengan nol atau satu, fungsi mengembalikan satu.
-   - Jika n lebih besar dari satu, fungsi mengalikan n dengan hasil pemanggilan fungsi faktorial dengan argumen n dikurangi satu.
-6. Proses ini akan berlanjut hingga mencapai kondisi di mana n sama dengan nol atau satu.
-7. Hasil akhir akan dicetak ke layar dengan format yang telah ditentukan.
+1. Program memulai dengan slice awal berisi nama-nama seperti "Andi", "Budi", dan "Cici".
+2. Fungsi sudahAda digunakan untuk memeriksa keberadaan nama di dalam daftar.
+3. Nama-nama baru seperti "Dewi", "Budi", dan "Eka" diperiksa:
+   - "Dewi" dan "Eka" ditambahkan karena belum ada.
+   - "Budi" tidak ditambahkan karena sudah ada, dan program menampilkan pesan.
+4. Slice akhir, yang sudah diperbarui tanpa duplikasi, ditampilkan sebagai output.
 
+## 3. Menampilkan Daftar Harga Buah Menggunakan Map
 
+#### Source Code
+```go
+//Guided 2 - Map
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	// Membuat map dengan nama buah sebagai kunci dan harga sebagai nilai
+	hargaBuah := map[string]int{
+		"Apel":  5000,
+		"Pisang": 3000,
+		"Mangga": 7000,
+	}
+
+	// Menampilkan harga dari setiap buah
+	fmt.Println("Harga Buah:")
+	for buah, harga := range hargaBuah {
+		fmt.Printf("%s: Rp%d\n", buah, harga)
+	}
+
+	fmt.Print("Harga buah Mangga = ", hargaBuah["Mangga"])
+}
+```
+
+#### Screenshoot Source Code
+![Screenshot 2024-11-17 073501](https://github.com/user-attachments/assets/98e325a5-417b-4831-b9e7-e61c9bbbed99)
+
+#### Screenshoot Output
+![Screenshot 2024-11-17 073511](https://github.com/user-attachments/assets/1c009fe8-0cc0-4c67-9939-b77281ec16fc)
+
+#### Deskripsi Program
+Program ini menggunakan struktur data map di Go untuk menyimpan data berupa nama buah sebagai kunci dan harga sebagai nilai. Program menampilkan daftar harga semua buah dan mencetak harga spesifik untuk buah tertentu.
+
+#### Algoritma Program
+1. Buat map hargaBuah dengan kunci berupa nama buah dan nilai berupa harga buah.
+2. Tambahkan beberapa data buah beserta harga ke dalam map.
+3. Iterasi melalui map untuk mencetak semua buah beserta harganya.
+4. Ambil dan tampilkan harga dari buah tertentu dengan menggunakan nama buah sebagai kunci.
+
+#### Cara Kerja
+1. Map hargaBuah dideklarasikan dengan beberapa data awal:
+   - Apel berharga lima ribu.
+   - Pisang berharga tiga ribu.
+   - Mangga berharga tujuh ribu.
+2. Program menggunakan perulangan for range untuk mencetak semua nama buah dan harga yang ada dalam map.
+3. Harga dari buah tertentu, seperti Mangga, diakses langsung menggunakan kunci hargaBuah["Mangga"] dan ditampilkan.
 
 ## III. UNGUIDED
-## 1. Program Deret Fibonacci Rekursif dengan Input Pengguna
-
-#### Source Code
-```go
-package main
-
-import (
-    "fmt"
-)
-
-// Fungsi rekursif untuk menghitung nilai Fibonacci ke-n
-func fibonacci(n int) int {
-    // Kasus dasar
-    if n == 0 {
-        return 0
-    } else if n == 1 {
-        return 1
-    }
-    // Kasus rekursif
-    return fibonacci(n-1) + fibonacci(n-2)
-}
-
-func main() {
-    // Cetak deret Fibonacci hingga suku ke-10
-    for i := 0; i <= 10; i++ {
-        fmt.Printf("Fibonacci(%d) = %d\n", i, fibonacci(i))
-    }
-}
-
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 193616](https://github.com/user-attachments/assets/ab5ec901-9459-4b2e-a7ed-b29f2cd12d40)
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 193621](https://github.com/user-attachments/assets/333fa9f2-4689-4d04-b5e5-165f5e7fa4be)
-
-#### Deskripsi Program
-Program ini menghitung dan menampilkan deret Fibonacci hingga suku ke-n, di mana nilai n ditentukan oleh pengguna melalui input. Deret Fibonacci adalah urutan bilangan di mana setiap angka setelah dua angka pertama adalah hasil penjumlahan dari dua angka sebelumnya. Program ini menggunakan fungsi rekursif untuk menghitung nilai setiap suku dalam deret Fibonacci.
-#### Algoritma Program
-1. Input Pengguna: Program meminta pengguna untuk memasukkan sebuah bilangan bulat n yang menunjukkan hingga suku ke berapa deret Fibonacci akan ditampilkan.
-2. Fungsi Rekursif: Program menggunakan fungsi rekursif bernama fibonacci untuk menghitung nilai dari suku ke-n dalam deret Fibonacci:
-   - Jika n sama dengan nol, maka fibonacci mengembalikan nol.
-   - Jika n sama dengan satu, maka fibonacci mengembalikan satu.
-   - Jika n lebih dari satu, maka fibonacci mengembalikan hasil dari fibonacci(n minus satu) + fibonacci(n minus dua).
-3. Cetak Deret Fibonacci: Program memanggil fungsi fibonacci untuk setiap suku dari nol hingga n, dan menampilkan hasilnya satu per satu.
-
-#### Cara Kerja
-1. Program memulai dengan meminta pengguna memasukkan nilai n.
-2. Setelah menerima input, program akan menggunakan loop for dari nol hingga n. Di setiap iterasi, program memanggil fungsi fibonacci untuk menghitung nilai suku ke-i.
-3. Fungsi fibonacci bekerja secara rekursif. Jika nilai i lebih dari satu, fungsi akan memanggil dirinya sendiri dua kali, dengan parameter i dikurangi satu dan i dikurangi dua, hingga mencapai kasus dasar yaitu nol atau satu.
-4. Hasil dari setiap suku Fibonacci dicetak dalam bentuk Fibonacci ke-i sama dengan hasil.
-5. Program berakhir setelah menampilkan semua suku Fibonacci hingga suku ke-n.
-
-## 2. Program Pola Bintang Menggunakan Fungsi Rekursif
-#### Source Code
-```go
-package main
-
-import (
-    "fmt"
-)
-
-// Fungsi rekursif untuk mencetak bintang pada setiap baris
-func printStars(n int) {
-    if n == 0 {
-        return
-    }
-    fmt.Print("*")
-    printStars(n - 1)
-}
-
-// Fungsi rekursif untuk mencetak pola bintang hingga baris ke-n
-func printPattern(n int, current int) {
-    if current > n {
-        return
-    }
-    printStars(current)
-    fmt.Println()
-    printPattern(n, current + 1)
-}
-
-func main() {
-    var n int
-    fmt.Print("Masukkan jumlah baris pola bintang: ")
-    fmt.Scan(&n)
-
-    fmt.Println("Pola bintang:")
-    printPattern(n, 1)
-}
-
-
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 200738](https://github.com/user-attachments/assets/33089e9b-fd15-448e-beec-35ea79f56bad)
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 200743](https://github.com/user-attachments/assets/189fb2f7-caec-4f40-81ef-384628a4d63c)
-
-#### Deskripsi Program
-Program ini digunakan untuk menampilkan pola bintang berbentuk segitiga yang terdiri dari beberapa baris sesuai input yang diberikan oleh pengguna. Pengguna akan memasukkan jumlah baris, dan program akan mencetak pola bintang yang bertambah pada setiap baris, mulai dari satu bintang di baris pertama hingga sejumlah bintang sesuai jumlah baris yang diinginkan. Program ini menggunakan fungsi rekursif untuk mencetak bintang dalam setiap baris dan mencetak pola secara keseluruhan.
-
-#### Algoritma Program 
-1. Input Pengguna: Program meminta pengguna untuk memasukkan sebuah bilangan bulat yang menunjukkan jumlah baris dalam pola bintang.
-2. Fungsi cetak bintang: Fungsi ini adalah fungsi rekursif yang digunakan untuk mencetak sejumlah bintang dalam satu baris:
-   - Jika nilai input sama dengan nol, fungsi berhenti dan tidak mencetak bintang.
-   - Jika nilai input lebih dari nol, fungsi mencetak satu bintang dan memanggil dirinya sendiri dengan nilai input dikurangi satu, sehingga mencetak bintang secara berulang hingga mencapai jumlah yang diinginkan.
-3. Fungsi cetak pola: Fungsi ini adalah fungsi rekursif untuk mencetak pola bintang baris demi baris:
-   - Fungsi menerima dua parameter, yaitu jumlah total baris yang diinginkan dan sebuah nilai yang menunjukkan jumlah bintang di baris saat ini.
-   - Jika nilai baris saat ini lebih besar dari jumlah total baris, fungsi berhenti dan pola selesai dicetak.
-   - Jika nilai baris saat ini masih kurang atau sama dengan jumlah total baris, fungsi memanggil fungsi cetak bintang untuk mencetak sejumlah bintang di baris tersebut, kemudian menampilkan baris baru, dan memanggil dirinya sendiri dengan nilai baris saat ini ditambah satu.
-4. Output: Program akan mencetak pola bintang dalam bentuk segitiga, sesuai dengan jumlah baris yang diminta oleh pengguna.
-
-
-#### Cara Kerja
-1. Program dimulai dengan meminta pengguna untuk memasukkan jumlah baris dalam pola bintang.
-2. Setelah menerima input, program memanggil fungsi cetak pola dengan parameter jumlah total baris yang diinginkan dan baris saat ini dimulai dari satu.
-3. Proses Rekursi:
-   - Di setiap pemanggilan fungsi cetak pola, program mencetak sejumlah bintang sesuai dengan baris saat ini dengan memanggil fungsi cetak bintang.
-   - Fungsi cetak bintang mencetak bintang satu per satu hingga jumlahnya sesuai dengan baris saat ini, kemudian berhenti.
-   - Setelah fungsi cetak bintang selesai, program menambahkan baris baru dan memanggil fungsi cetak pola lagi dengan baris saat ini ditambah satu, sehingga jumlah bintang di baris berikutnya bertambah satu.
-4. Proses ini berulang hingga nilai baris saat ini lebih besar dari jumlah total baris, di mana program berhenti dan pola bintang selesai dicetak.
-
-## 3. Program Rekursif untuk Menampilkan Faktor Bilangan
-
+## 1. Pengecekan Posisi Titik terhadap Dua Lingkaran
 #### Source Code
 ```go
 package main
 
 import (
 	"fmt"
+	"math"
 )
 
-// Fungsi rekursif untuk mencari faktor dari N dalam urutan menaik
-func findFactors(n, current int) {
-	if current > n {
-		return
-	}
-	if n%current == 0 {
-		fmt.Print(current, " ")
-	}
-	findFactors(n, current+1)
+// Tipe data untuk menyimpan koordinat titik
+type Titik struct {
+	x, y int
+}
+
+// Tipe data untuk menyimpan lingkaran
+type Lingkaran struct {
+	pusat Titik
+	radius int
+}
+
+// Fungsi untuk menghitung jarak antara dua titik
+func jarak(p, q Titik) float64 {
+	return math.Sqrt(float64((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y)))
+}
+
+// Fungsi untuk menentukan apakah titik berada di dalam lingkaran
+func didalam(c Lingkaran, p Titik) bool {
+	return jarak(c.pusat, p) <= float64(c.radius)
 }
 
 func main() {
+	// Input lingkaran 1
+	var cx1, cy1, r1 int
+	fmt.Printf("Masukkan koordinat pusat dan radius lingkaran 1 (cx1 cy1 r1):")
+	fmt.Scan(&cx1, &cy1, &r1)
+
+	// Input lingkaran 2
+	var cx2, cy2, r2 int
+	fmt.Printf("Masukkan koordinat pusat dan radius lingkaran 2 (cx2 cy2 r2):")
+	fmt.Scan(&cx2, &cy2, &r2)
+
+	// Input titik sembarang
+	var px, py int
+	fmt.Printf("Masukkan koordinat titik sembarang (px py):")
+	fmt.Scan(&px, &py)
+
+	// Buat lingkaran dan titik
+	lingkaran1 := Lingkaran{Titik{cx1, cy1}, r1}
+	lingkaran2 := Lingkaran{Titik{cx2, cy2}, r2}
+	titik := Titik{px, py}
+
+	// Cek posisi titik terhadap lingkaran
+	dalamL1 := didalam(lingkaran1, titik)
+	dalamL2 := didalam(lingkaran2, titik)
+
+	// Output posisi titik
+	if dalamL1 && dalamL2 {
+		fmt.Println("Titik di dalam lingkaran 1 dan 2")
+	} else if dalamL1 {
+		fmt.Println("Titik di dalam lingkaran 1")
+	} else if dalamL2 {
+		fmt.Println("Titik di dalam lingkaran 2")
+	} else {
+		fmt.Println("Titik di luar lingkaran 1 dan 2")
+	}
+}
+
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-17 074851](https://github.com/user-attachments/assets/f0225f5b-fcc6-42c0-974b-add5176b83b3)
+
+#### Screenshoot Output
+![Screenshot 2024-11-17 074900](https://github.com/user-attachments/assets/f33dda59-f881-4bae-aa60-68c9f3375d7f)
+
+#### Deskripsi Program
+Program ini menentukan apakah suatu titik berada di dalam dua lingkaran yang diberikan oleh pengguna, berdasarkan koordinat pusat dan radius kedua lingkaran tersebut.
+
+#### Algoritma Program
+1. Masukkan koordinat pusat dan radius dari dua lingkaran.
+2. Masukkan koordinat titik yang akan diperiksa.
+3. Hitung jarak antara titik dan pusat lingkaran.
+4. Periksa apakah jarak titik lebih kecil atau sama dengan radius lingkaran.
+5. Outputkan hasil apakah titik berada di dalam salah satu, kedua, atau tidak ada lingkaran.
+
+#### Cara Kerja
+1. Fungsi jarak menghitung jarak antara titik pusat lingkaran dan titik yang diperiksa.
+2. Fungsi didalam memeriksa apakah jarak titik ke pusat lingkaran lebih kecil atau sama dengan radius lingkaran.
+3. Program kemudian mengevaluasi apakah titik berada di dalam salah satu atau kedua lingkaran, dan menampilkan hasilnya.
+
+## 2. Program Pengolahan dan Analisis Data Array
+#### Source Code
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	// Deklarasi array
 	var n int
-	fmt.Print("Masukkan bilangan bulat positif: ")
+	fmt.Print("Masukkan jumlah elemen array: ")
 	fmt.Scan(&n)
-	fmt.Print("Faktor dari ", n, " adalah: ")
-	findFactors(n, 1)
+
+	array := make([]int, n)
+	fmt.Println("Masukkan elemen array:")
+	for i := 0; i < n; i++ {
+		fmt.Printf("Elemen ke-%d: ", i)
+		fmt.Scan(&array[i])
+	}
+
+	// Menampilkan seluruh isi array
+	fmt.Println("\nSeluruh isi array:", array)
+
+	// Menampilkan elemen dengan indeks ganjil
+	fmt.Print("Elemen dengan indeks ganjil: ")
+	for i := 1; i < len(array); i += 2 {
+		fmt.Print(array[i], " ")
+	}
 	fmt.Println()
-}
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 201619](https://github.com/user-attachments/assets/57b03312-7e68-4b8e-aed3-409e266c3b6f)
 
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 201623](https://github.com/user-attachments/assets/b2a46845-7794-48f7-9f37-8a0a4486cff5)
-
-#### Deskripsi Program
-Program ini adalah implementasi dalam bahasa Go untuk mencari faktor-faktor dari sebuah bilangan positif menggunakan rekursi. Program akan menerima input berupa bilangan bulat positif dari pengguna, kemudian menampilkan semua faktor dari bilangan tersebut dalam urutan menaik, mulai dari satu hingga bilangan itu sendiri.
-
-#### Algoritma Program
-1. Input: Terima input bilangan bulat positif dari pengguna.
-2. Pencarian Faktor:
-   - Gunakan fungsi rekursif findFactors untuk mencari dan mencetak faktor-faktor dari bilangan tersebut.
-   - Mulai dengan nilai current sama dengan satu, dan cek apakah current merupakan faktor dari bilangan tersebut.
-   - Jika benar, cetak current sebagai faktor.
-   - Ulangi langkah ini dengan menaikkan current hingga current melebihi bilangan input.
-3. Output: Tampilkan faktor-faktor dari bilangan dalam urutan menaik.
-
-#### Cara Kerja
-1. Fungsi main:
-   - Meminta pengguna memasukkan bilangan bulat positif.
-   - Memanggil fungsi findFactors dengan current bernilai satu untuk mulai mencari faktor dari bilangan tersebut.
-2. Fungsi Rekursif findFactors:
-   - Fungsi ini memiliki dua parameter, yaitu n sebagai bilangan yang dicari faktornya dan current sebagai angka yang sedang diperiksa apakah merupakan faktor.
-   - Langkah-langkah fungsi findFactors:
-     - Basis Rekursi: Jika current lebih besar dari n, hentikan fungsi karena semua faktor sudah ditemukan.
-     - Cek Faktor: Jika n habis dibagi current, berarti current adalah faktor dari n, sehingga current dicetak.
-     - Panggil Diri Sendiri: Panggil kembali findFactors dengan current ditambah satu, sehingga fungsi memeriksa angka berikutnya.
-3. Contoh Jalannya Program:
-   - Misal input dari pengguna adalah dua belas.
-   - Fungsi findFactors akan dipanggil, dan angka-angka dari satu hingga dua belas akan diperiksa satu per satu apakah merupakan faktor dari dua belas.
-   - Faktor-faktor yang ditemukan (satu, dua, tiga, empat, enam, dua belas) akan dicetak dalam urutan menaik.
-
-
-## 4. Program yang Mengimplementasikan Rekursif untuk Menampilkan Barisan Bilangan Tertentu
-#### Source Code
-```go
-package main
-
-import (
-	"fmt"
-)
-
-// Fungsi rekursif untuk menampilkan bilangan dari n sampai 1 dan kembali ke n
-func printSequence(n, current int) {
-	// Cetak bilangan menurun dari current ke 1
-	if current > 0 {
-		fmt.Print(current, " ")
-		printSequence(n, current-1) // Rekursif turun ke bawah
+	// Menampilkan elemen dengan indeks genap
+	fmt.Print("Elemen dengan indeks genap: ")
+	for i := 0; i < len(array); i += 2 {
+		fmt.Print(array[i], " ")
 	}
-
-	// Cetak bilangan naik dari 2 hingga n
-	if current < n {
-		fmt.Print(current+1, " ")
-	}
-}
-
-func main() {
-	var n int
-	fmt.Print("Masukkan bilangan bulat positif: ")
-	fmt.Scan(&n) // Menerima input dari pengguna
-	fmt.Print("Hasil barisan: ")
-	printSequence(n, n) // Memanggil fungsi dengan nilai awal n
-	fmt.Println() // Pindah ke baris baru
-}
-
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 202412](https://github.com/user-attachments/assets/b030d046-57ad-4daa-9723-c9a9bd02197c)
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 202420](https://github.com/user-attachments/assets/74c5ac64-a970-49b4-af7c-6df6173b4054)
-
-#### Deskripsi Program
-Program ini meminta pengguna untuk memasukkan sebuah bilangan bulat positif n. Kemudian, menggunakan fungsi rekursif, program mencetak urutan angka dari n hingga satu, diikuti dengan angka dari dua hingga n. Dengan kata lain, program ini menampilkan urutan bilangan secara menurun dan kemudian kembali menaik.
-
-#### Algoritma Program
-1. Input Bilangan: Menerima input dari pengguna berupa bilangan bulat positif n.
-2. Fungsi Rekursif: Menggunakan fungsi printSequence dengan dua parameter:
-   - n: bilangan bulat positif yang diinputkan oleh pengguna.
-   - current: bilangan saat ini yang akan dicetak, dimulai dari n dan berkurang hingga satu.
-3. Mencetak Bilangan Menurun:
-   - Jika current lebih besar dari nol, cetak nilai current.
-   - Panggil fungsi printSequence secara rekursif dengan current dikurangi satu.
-4. Mencetak Bilangan Menaik:
-   - Setelah mencapai satu, jika current kurang dari n, cetak current ditambah satu untuk menampilkan bilangan yang naik hingga n.
-5. Output: Tampilkan hasil urutan bilangan di konsol.
-
-#### Cara Kerja
-1. Program dimulai dari fungsi main, di mana variabel n dideklarasikan untuk menyimpan input pengguna.
-2. Pengguna diminta untuk memasukkan bilangan bulat positif.
-3. Fungsi printSequence dipanggil dengan n sebagai nilai awal untuk current.
-4. Fungsi printSequence beroperasi dengan cara berikut:
-   - Pertama, mencetak angka menurun dari current hingga satu.
-   - Setelah mencapai satu, fungsi mulai mencetak angka menaik dari dua hingga n.
-5. Program berakhir setelah semua angka dicetak dan mengeluarkan hasil di baris baru.
-
-## 5. Program Rekursif untuk Menampilkan Bilangan Ganjil
-#### Source Code
-```go
-package main
-
-import (
-	"fmt"
-)
-
-// Fungsi rekursif untuk menampilkan bilangan ganjil dari 1 hingga N
-func cetakBilanganGanjil(n, current int) {
-	if current > n {
-		return
-	}
-	if current%2 != 0 {
-		fmt.Print(current, " ")
-	}
-	cetakBilanganGanjil(n, current+1)
-}
-
-func main() {
-	var N int
-	fmt.Print("Masukkan bilangan bulat positif N: ")
-	fmt.Scan(&N)
-
-	fmt.Print("Bilangan ganjil dari 1 hingga ", N, ": ")
-	cetakBilanganGanjil(N, 1)
 	fmt.Println()
-}
 
-
-```
-#### Screenshoot Source Code
-![Screenshot 2024-11-03 203151](https://github.com/user-attachments/assets/6d661778-4b65-49f0-8b35-1c403f4fd5e5)
-
-#### Screenshoot Output
-![Screenshot 2024-11-03 203156](https://github.com/user-attachments/assets/0fc8a9c9-95f2-4778-a180-4d0035b8fb0a)
-
-
-#### Deskripsi Program
-Program ini bertujuan untuk menampilkan barisan bilangan ganjil dari 1 hingga N dengan menggunakan metode rekursif. Pengguna diminta untuk memasukkan sebuah bilangan bulat positif N, kemudian program akan mencetak bilangan ganjil satu per satu sampai mencapai nilai N.
-
-#### Algoritma Program 
-1. Minta pengguna memasukkan bilangan bulat positif N.
-2. Buat sebuah fungsi rekursif bernama cetakBilanganGanjil yang menerima dua parameter: nilai N (batas akhir) dan current (bilangan yang sedang diperiksa).
-3. Di dalam fungsi rekursif:
-   - Jika nilai current melebihi N, hentikan fungsi.
-   - Jika current adalah bilangan ganjil, cetak bilangan tersebut.
-   - Panggil fungsi cetakBilanganGanjil lagi dengan current bertambah satu.
-4. Panggil fungsi cetakBilanganGanjil dari fungsi utama, dimulai dari 1.
-5. Program mencetak bilangan ganjil dari 1 hingga N.
-
-#### Cara Kerja
-1. Input Pengguna: Program meminta pengguna untuk memasukkan bilangan bulat positif N. Misalnya, jika pengguna memasukkan 20, maka N menjadi 20.
-2. Inisialisasi dan Pemanggilan Fungsi: Program memanggil fungsi rekursif cetakBilanganGanjil dengan N dan memulai dari 1 sebagai bilangan awal (current).
-3. Logika Rekursif:
-   - Periksa Kondisi Akhir: Jika current lebih besar dari N, maka fungsi berhenti. Ini mencegah program terus berjalan tanpa batas.
-   - Cek Bilangan Ganjil: Jika current adalah bilangan ganjil (memiliki sisa 1 saat dibagi 2), program mencetak bilangan tersebut.
-   - Panggilan Rekursif: Fungsi cetakBilanganGanjil dipanggil lagi dengan current bertambah satu. Ini membuat program terus memeriksa bilangan berikutnya hingga mencapai N.
-4. Cetak Hasil: Program mencetak semua bilangan ganjil dari 1 hingga N dalam satu baris, dipisahkan oleh spasi.
-
-## 6. Program Rekursif untuk Menghitung Pangkat Bilangan
-#### Source Code
-```go
-package main
-
-import (
-	"fmt"
-)
-
-// Fungsi rekursif untuk menghitung x dipangkatkan y
-func pangkat(x, y int) int {
-	if y == 0 {
-		return 1 // Basis: jika y = 0, hasilnya adalah 1
-	}
-	return x * pangkat(x, y-1) // Rekursi: x * (x pangkat y-1)
-}
-
-func main() {
-	var x, y int
-	fmt.Print("Masukkan bilangan bulat x: ")
+	// Menampilkan elemen dengan indeks kelipatan x
+	var x int
+	fmt.Print("Masukkan nilai x untuk kelipatan: ")
 	fmt.Scan(&x)
-	fmt.Print("Masukkan bilangan bulat y: ")
-	fmt.Scan(&y)
+	fmt.Print("Elemen dengan indeks kelipatan ", x, ": ")
+	for i := 0; i < len(array); i++ {
+		if i%x == 0 {
+			fmt.Print(array[i], " ")
+		}
+	}
+	fmt.Println()
 
-	hasil := pangkat(x, y)
-	fmt.Printf("Hasil %d dipangkatkan %d adalah %d\n", x, y, hasil)
+	// Menghapus elemen pada indeks tertentu
+	var index int
+	fmt.Print("Masukkan indeks yang akan dihapus: ")
+	fmt.Scan(&index)
+	if index >= 0 && index < len(array) {
+		array = append(array[:index], array[index+1:]...)
+		fmt.Println("Array setelah penghapusan:", array)
+	} else {
+		fmt.Println("Indeks tidak valid.")
+	}
+
+	// Menampilkan rata-rata elemen array
+	sum := 0
+	for _, v := range array {
+		sum += v
+	}
+	average := float64(sum) / float64(len(array))
+	fmt.Printf("Rata-rata elemen array: %.2f\n", average)
+
+	// Menampilkan standar deviasi elemen array
+	var variance float64
+	for _, v := range array {
+		variance += math.Pow(float64(v)-average, 2)
+	}
+	variance /= float64(len(array))
+	stdDev := math.Sqrt(variance)
+	fmt.Printf("Standar deviasi elemen array: %.2f\n", stdDev)
+
+	// Menampilkan frekuensi suatu bilangan
+	var target int
+	fmt.Print("Masukkan bilangan untuk mencari frekuensi: ")
+	fmt.Scan(&target)
+	count := 0
+	for _, v := range array {
+		if v == target {
+			count++
+		}
+	}
+	fmt.Printf("Frekuensi bilangan %d: %d kali\n", target, count)
 }
 
 ```
 #### Screenshoot Source Code
-![Screenshot 2024-11-03 204030](https://github.com/user-attachments/assets/a582e20d-8bc2-4cee-84c5-30f34eed0054)
+![Screenshot 2024-11-17 075521](https://github.com/user-attachments/assets/2ee302f1-53fe-4608-b2f9-500259874325)
 
 #### Screenshoot Output
-![Screenshot 2024-11-03 204035](https://github.com/user-attachments/assets/52820c11-4f6f-4b56-90ae-7264b5bb293a)
-
+![Screenshot 2024-11-17 075806](https://github.com/user-attachments/assets/53edf973-ac22-400a-a296-049820f0d53f)
 
 #### Deskripsi Program
-Program ini bertujuan untuk menghitung hasil pangkat dari dua bilangan bulat x dan y menggunakan metode rekursif. Pengguna diminta untuk memasukkan bilangan x (basis) dan y (pangkat), kemudian program akan menghitung hasil x dipangkatkan y tanpa menggunakan pustaka matematika bawaan.
+Program ini dibuat menggunakan bahasa Go untuk memanipulasi dan menganalisis data berupa array integer. Program menerima input jumlah elemen array dan nilai-nilai elemen array, kemudian memberikan berbagai informasi sesuai kebutuhan. Program ini mencakup operasi seperti menampilkan elemen array tertentu, menghitung rata-rata, standar deviasi, serta frekuensi elemen tertentu.
 
 #### Algoritma Program 
-1. Minta pengguna memasukkan dua bilangan bulat x dan y.
-2. Buat fungsi rekursif bernama pangkat yang menerima dua parameter: x (basis) dan y (pangkat).
-3. Di dalam fungsi rekursif:
-   - Jika y sama dengan nol, kembalikan hasil satu. Ini adalah kasus dasar di mana bilangan apa pun yang dipangkatkan nol adalah satu.
-   - Jika y lebih besar dari nol, kembalikan hasil x dikalikan dengan panggilan rekursif pangkat dengan y dikurangi satu.
-4. Panggil fungsi pangkat dari fungsi utama dengan x dan y sebagai argumen.
-5. Cetak hasil perhitungan pangkat.
+1. Meminta pengguna memasukkan jumlah elemen array.
+2. Membaca nilai elemen array satu per satu.
+3. Menampilkan seluruh isi array.
+4. Menampilkan elemen array berdasarkan:
+   - Indeks ganjil.
+   - Indeks genap.
+   - Indeks kelipatan angka tertentu yang dimasukkan pengguna.
+5. Menghapus elemen pada indeks tertentu sesuai input pengguna.
+6. Menghitung rata-rata elemen array.
+7. Menghitung standar deviasi elemen array.
+8. Menghitung dan menampilkan frekuensi kemunculan bilangan tertentu dalam array.
 
 #### Cara Kerja
-1. Input Pengguna: Program meminta pengguna untuk memasukkan dua bilangan bulat, x sebagai bilangan dasar dan y sebagai bilangan pangkat. Misalnya, jika pengguna memasukkan 2 untuk x dan 3 untuk y, maka x = 2 dan y = 3.
-2. Inisialisasi dan Pemanggilan Fungsi: Program memanggil fungsi pangkat untuk menghitung x dipangkatkan y.
-3. Logika Rekursif:
-   - Kasus Dasar: Jika y adalah nol, hasilnya adalah satu, dan fungsi berhenti. Ini karena bilangan apa pun yang dipangkatkan nol hasilnya satu.
-   - Perhitungan Rekursif: Jika y lebih besar dari nol, hasilnya dihitung dengan mengalikan x dengan hasil dari panggilan fungsi pangkat dengan y berkurang satu. Ini berlanjut sampai y menjadi nol.
-4. Cetak Hasil: Program menghitung dan mencetak hasil dari x dipangkatkan y.
+1. Inisialisasi: Program dimulai dengan meminta jumlah elemen dan nilai-nilai array dari pengguna.
+2. Operasi pada Array:
+   - Menampilkan elemen sesuai kriteria tertentu (indeks ganjil, genap, atau kelipatan angka).
+   - Menghapus elemen di indeks tertentu dan memperbarui array.
+3. Perhitungan Statistik:
+   - Rata-rata dihitung dengan membagi total elemen dengan jumlah elemen.
+   - Standar deviasi dihitung menggunakan formula akar dari varians.
+4. Frekuensi Elemen: Program menghitung berapa kali bilangan tertentu muncul dalam array.
+5. Output: Hasil setiap operasi ditampilkan kepada pengguna secara bertahap.
+
+## 3. Program Pencatat Pemenang Pertandingan Sepak Bola
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var clubA, clubB string
+	var scoreA, scoreB int
+	var winners []string
+
+	// Meminta input nama klub
+	fmt.Print("Masukkan nama Klub A: ")
+	fmt.Scan(&clubA)
+	fmt.Print("Masukkan nama Klub B: ")
+	fmt.Scan(&clubB)
+
+	fmt.Println("\nMasukkan skor untuk pertandingan (input skor negatif untuk berhenti):")
+
+	// Loop untuk mencatat skor pertandingan
+	match := 1
+	for {
+		fmt.Printf("Pertandingan %d - Skor %s: ", match, clubA)
+		fmt.Scan(&scoreA)
+		fmt.Printf("Pertandingan %d - Skor %s: ", match, clubB)
+		fmt.Scan(&scoreB)
+
+		// Hentikan jika skor tidak valid
+		if scoreA < 0 || scoreB < 0 {
+			fmt.Println("Pertandingan selesai.\n")
+			break
+		}
+
+		// Menentukan hasil pertandingan
+		if scoreA > scoreB {
+			winners = append(winners, clubA)
+			fmt.Printf("Hasil %d: %s menang\n", match, clubA)
+		} else if scoreB > scoreA {
+			winners = append(winners, clubB)
+			fmt.Printf("Hasil %d: %s menang\n", match, clubB)
+		} else {
+			winners = append(winners, "Draw")
+			fmt.Printf("Hasil %d: Draw\n", match)
+		}
+		match++
+	}
+
+	// Menampilkan daftar pemenang
+	fmt.Println("Daftar hasil pertandingan:")
+	for i, winner := range winners {
+		fmt.Printf("Pertandingan %d: %s\n", i+1, winner)
+	}
+}
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-17 080753](https://github.com/user-attachments/assets/b3ed3fbb-298d-4f04-b8c4-25cbc05c3979)
+
+#### Screenshoot Output
+![Screenshot 2024-11-17 080808](https://github.com/user-attachments/assets/9005a6f4-c0ee-478a-a39e-4f6796afc518)
+
+#### Deskripsi Program
+Program ini digunakan untuk mencatat hasil pertandingan sepak bola antara dua klub. Setiap pertandingan akan meminta pengguna untuk memasukkan nama klub dan skor masing-masing tim. Program secara otomatis menyimpan nama klub pemenang ke dalam daftar, atau mencatat hasil pertandingan sebagai draw jika skor sama. Proses input akan berhenti jika salah satu skor yang dimasukkan tidak valid (misalnya negatif).
+
+#### Algoritma Program
+1. Meminta pengguna memasukkan nama klub A dan klub B.
+2. Memulai loop untuk mencatat skor pertandingan:
+ - Meminta input skor klub A dan klub B.
+ - Jika skor tidak valid (negatif), hentikan proses input.
+ - Bandingkan skor:
+   - Jika skor klub A lebih besar, tambahkan klub A ke daftar pemenang.
+   - Jika skor klub B lebih besar, tambahkan klub B ke daftar pemenang.
+   - Jika skor sama, tambahkan hasil draw ke daftar.
+3. Setelah loop selesai, tampilkan daftar hasil pertandingan.
+
+#### Cara Kerja
+1. Inisialisasi: Program meminta input nama kedua klub yang bertanding.
+2. Cek Validasi Skor: Program menerima input skor untuk kedua klub. Jika ditemukan skor negatif, proses berhenti.
+3. Menyimpan Hasil Pertandingan:
+   - Menyimpan nama klub pemenang ke dalam daftar jika salah satu menang.
+   - Menyimpan hasil draw jika skor kedua klub sama.
+4. Menampilkan Hasil: Setelah selesai, program menampilkan daftar semua hasil pertandingan yang telah tercatat.
+
+## 4. Program Membalik Urutan Karakter Array dan Mengecek Palindrom
+#### Source Code
+```go
+package main
+
+import (
+	"fmt"
+)
+
+const NMAX int = 127
+
+type tabel [NMAX]rune
+
+// Fungsi untuk mengisi array
+func isiArray(t *tabel, n *int) {
+	fmt.Println("Masukkan karakter (akhiri dengan .):")
+	*n = 0
+	for {
+		var ch rune
+		fmt.Scanf("%c", &ch)
+
+		// Hentikan input jika bertemu dengan titik atau melebihi batas array
+		if ch == '.' || *n >= NMAX {
+			break
+		}
+
+		t[*n] = ch
+		*n++
+	}
+}
+
+// Fungsi untuk mencetak isi array
+func cetakArray(t tabel, n int) {
+	for i := 0; i < n; i++ {
+		fmt.Printf("%c", t[i])
+	}
+	fmt.Println()
+}
+
+// Fungsi untuk membalik array
+func balikanArray(t *tabel, n int) {
+	for i := 0; i < n/2; i++ {
+		t[i], t[n-i-1] = t[n-i-1], t[i]
+	}
+}
+
+// Fungsi untuk memeriksa apakah array adalah palindrom (mengabaikan spasi)
+func palindrom(t tabel, n int) bool {
+	left, right := 0, n-1
+	for left < right {
+		// Abaikan spasi di kiri
+		for left < right && t[left] == ' ' {
+			left++
+		}
+		// Abaikan spasi di kanan
+		for left < right && t[right] == ' ' {
+			right--
+		}
+		// Periksa apakah karakter tidak sama
+		if t[left] != t[right] {
+			return false
+		}
+		left++
+		right--
+	}
+	return true
+}
+
+func main() {
+	var tab tabel
+	var n int
+
+	// Isi array
+	isiArray(&tab, &n)
+
+	// Cetak array asli
+	fmt.Print("Teks: ")
+	cetakArray(tab, n)
+
+	// Balik array dan cetak
+	balikanArray(&tab, n)
+	fmt.Print("Reverse teks: ")
+	cetakArray(tab, n)
+
+	// Cek palindrom
+	if palindrom(tab, n) {
+		fmt.Println("Palindrom: true")
+	} else {
+		fmt.Println("Palindrom: false")
+	}
+}
+
+
+```
+#### Screenshoot Source Code
+![Screenshot 2024-11-17 082044](https://github.com/user-attachments/assets/e4047363-51fb-46e8-a66b-19fc5e3d73aa)
+
+#### Screenshoot Output
+![Screenshot 2024-11-17 082022](https://github.com/user-attachments/assets/e6e3d83b-cd68-40b4-819c-16a537683139)
+
+#### Deskripsi Program
+Program ini menggunakan array untuk menyimpan kumpulan karakter yang dimasukkan pengguna. Program akan membalik urutan isi array tersebut dan memeriksa apakah karakter-karakter tersebut membentuk sebuah palindrom. Palindrom adalah teks yang sama jika dibaca dari depan maupun belakang, seperti kata "KATAK" atau "APA".
+
+#### Algoritma Program
+1. Inisialisasi: Membuat array untuk menyimpan karakter hingga batas maksimum.
+2. Input Data: Membaca karakter yang dimasukkan oleh pengguna hingga batas maksimum atau hingga karakter titik ditemukan.
+3. Cetak Data: Menampilkan isi array sesuai urutan input.
+4. Balik Urutan: Membalik isi array menggunakan fungsi khusus.
+5. Cek Palindrom: Membandingkan karakter asli dengan karakter setelah dibalik untuk memeriksa apakah teks adalah palindrom.
+6. Output Hasil: Menampilkan hasil array terbalik dan status apakah array tersebut adalah palindrom.
+
+#### Cara Kerja
+1. Program meminta pengguna memasukkan teks berupa karakter hingga bertemu dengan titik (tanda berhenti).
+2. Program mencetak teks sesuai urutan input.
+3. Teks dibalik menggunakan prosedur pembalik array, lalu dicetak ulang.
+4. Program memeriksa apakah teks tersebut palindrom dan mencetak hasilnya.
 
 ### Kesimpulan
-Rekursif adalah teknik dalam pemrograman di mana sebuah fungsi memanggil dirinya sendiri untuk memecah masalah kompleks menjadi sub-masalah yang lebih sederhana. Teknik ini membantu menyelesaikan masalah secara bertahap hingga mencapai solusi akhir. Ada dua jenis utama rekursif: rekursif langsung, di mana fungsi memanggil dirinya sendiri secara langsung, dan rekursif tidak langsung, di mana fungsi memanggil fungsi lain yang kemudian memanggil fungsi pertama. Fungsi rekursif harus memiliki base case, yaitu kondisi yang menghentikan rekursi, dan recursive case, yaitu bagian yang memanggil fungsi kembali dengan masalah yang lebih kecil. Base case dan recursive case sangat penting untuk memastikan bahwa fungsi rekursif tidak berjalan tanpa henti dan dapat menyelesaikan masalah secara efisien.
+Tipe bentukan, array, dan map adalah fitur penting dalam pemrograman untuk mengelola data secara efisien. Tipe bentukan seperti alias mempermudah penulisan kode, sementara struct mengelompokkan berbagai tipe data menjadi satu kesatuan yang terorganisir. Array dapat digunakan dalam bentuk statis untuk ukuran tetap atau slice untuk ukuran dinamis, memberikan fleksibilitas lebih saat runtime. Map memungkinkan penyimpanan data berbasis pasangan kunci-nilai, membuat akses data lebih fleksibel. Dengan menggabungkan struct dan array, data kompleks seperti data mahasiswa dapat dikelola secara terstruktur, sehingga memudahkan pemrograman dan pengolahan data.
 
 ## Referensi 
 [1] Kernighan, B. W., & Ritchie, D. M. (1988). The C Programming Language (2nd ed.). Prentice Hall.
