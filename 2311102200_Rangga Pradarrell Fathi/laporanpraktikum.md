@@ -667,4 +667,7 @@ Algoritma Program :
 3. Fungsi 'palindrom' untuk memeriksa apakah teks di dalam array merupakan palindrom.
 4. Tampilkan hasil pemeriksaan apakah teks palindrom atau tidak.
 
+## Referensi
+[1] https://fikti.umsu.ac.id/struktur-data-array-pengertian-fungsi-dan-contoh-program/
 
+[2] https://www.researchgate.net/profile/Anita-Sindar/publication/337657500_STRUKTUR_DATA_DAN_ALGORITMA_DENGAN_C/links/5de3c560299bf10bc33628a2/STRUKTUR-DATA-DAN-ALGORITMA-DENGAN-C.pdf
