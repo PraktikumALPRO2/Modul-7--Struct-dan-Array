@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type titik struct {
+	x, y float64
+}
+
+type lingkaran struct {
+	px, py, r float64
+}
+
+func jarak(t1, t2 titik) float64 {
+	return math.Sqrt(math.Pow(t1.x-t2.x, 2) + math.Pow(t1.y-t2.y, 2))
+}
+
+func lokasititik(t titik, l lingkaran) bool {
+	return jarak(titik{t.x, t.y}, titik{l.px, l.py}) <= l.r
+}
+
+func main() {
+	var l1, l2 lingkaran
+	var k titik
+
+	fmt.Print("Masukkan Titik Pusat Lingkaran 1 (x y): ")
+	fmt.Scan(&l1.px, &l1.py)
+	fmt.Print("Masukkan Radius Lingkaran 1: ")
+	fmt.Scan(&l1.r)
+	fmt.Print("Masukkan Titik Pusat Lingkaran 2 (x y): ")
+	fmt.Scan(&l2.px, &l2.py)
+	fmt.Print("Masukkan Radius Lingkaran 2: ")
+	fmt.Scan(&l2.r)
+	fmt.Print("Masukkan Koordinat Titik (x y): ")
+	fmt.Scan(&k.x, &k.y)
+
+	if lokasititik(k, l1) && lokasititik(k, l2) {
+		fmt.Println("Titik berada di Lingkaran 1 dan 2.")
+	} else if lokasititik(k, l1) {
+		fmt.Println("Titik berada di Lingkaran 1.")
+	} else if lokasititik(k, l2) {
+		fmt.Println("Titik berada di Lingkaran 2.")
+	} else {
+		fmt.Println("Titik berada di luar lingkaran.")
+	}
+}
