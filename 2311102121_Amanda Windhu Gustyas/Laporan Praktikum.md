@@ -342,8 +342,85 @@ func main() {
 
 Program ini mengolah array dengan beberapa operasi, seperti menampilkan seluruh elemen, elemen dengan indeks ganjil/genap, elemen dengan indeks kelipatan tertentu, menghapus elemen, menghitung rata-rata dan standar deviasi, serta menghitung frekuensi tiap elemen dalam array. Pengguna bisa memasukkan nilai array dan indeks yang ingin dimanipulasi.
 
+### 3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga. Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja. Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.   
 
+```go
+package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func main() {
+	var klubA, klubB string
+	var pemenang []string
+
+	// Input nama klub
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Print("Klub A : ")
+	scanner.Scan()
+	klubA = scanner.Text()
+
+	fmt.Print("Klub B : ")
+	scanner.Scan()
+	klubB = scanner.Text()
+
+	// Proses input skor
+	for i := 1; ; i++ {
+		fmt.Printf("Pertandingan %d : ", i)
+		scanner.Scan()
+		skorInput := scanner.Text()
+		skor := strings.Split(skorInput, " ")
+
+		if len(skor) != 2 {
+			fmt.Println("Input tidak valid, masukkan 2 skor dipisahkan dengan spasi.")
+			break
+		}
+
+		// Konversi skor menjadi integer
+		skorA, errA := strconv.Atoi(skor[0])
+		skorB, errB := strconv.Atoi(skor[1])
+
+		if errA != nil || errB != nil {
+			fmt.Println("Input skor tidak valid.")
+			break
+		}
+
+		// Hentikan jika skor negatif
+		if skorA < 0 || skorB < 0 {
+			fmt.Println("Pertandingan selesai")
+			break
+		}
+
+		// Menentukan pemenang
+		if skorA > skorB {
+			pemenang = append(pemenang, klubA)
+			fmt.Printf("Hasil %d : %s\n", i, klubA)
+		} else if skorB > skorA {
+			pemenang = append(pemenang, klubB)
+			fmt.Printf("Hasil %d : %s\n", i, klubB)
+		} else {
+			pemenang = append(pemenang, "Draw")
+			fmt.Printf("Hasil %d : Draw\n", i)
+		}
+	}
+
+	// Menampilkan hasil pemenang
+	fmt.Println("\nDaftar pemenang pertandingan:")
+	for _, hasil := range pemenang {
+		fmt.Println(hasil)
+	}
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/345093f0-57cf-43fc-a3db-a8326bb0c579)
+
+Program ini meminta input nama dua klub dan skor pertandingan secara berulang. Program akan menentukan pemenang setiap pertandingan, mencatat hasilnya, dan berhenti jika skor negatif dimasukkan. Di akhir, daftar pemenang ditampilkan.
+
+### 4. 
 
 
 
