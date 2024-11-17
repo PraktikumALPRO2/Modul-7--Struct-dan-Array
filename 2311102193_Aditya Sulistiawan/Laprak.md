@@ -269,40 +269,58 @@ Keluaran berupa string yang menyatakan posisi titik "Titik di dalam lingkaran 1 
 
 #### Source Code
 ```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func FibonacciAngka(n int) int {
-	if n == 0 {
-		return 0
-	} else if n == 1 {
-		return 1
-	} else {
-		return FibonacciAngka(n-1) + FibonacciAngka(n-2)
-	}
+type Titik struct {
+	x, y int
+}
+
+type Lingkaran struct {
+	radius     float64
+	titikPusat Titik
+}
+
+func getJarak(lingkaran Lingkaran, titikSembarang Titik) float64 {
+	return math.Sqrt(math.Pow(float64(lingkaran.titikPusat.x)-float64(titikSembarang.x), 2) + math.Pow(float64(lingkaran.titikPusat.y)-float64(titikSembarang.y), 2))
+}
+
+func cekDidalam(lingkaran Lingkaran, jarak float64) bool {
+	return lingkaran.radius >= jarak
 }
 
 func main() {
-	var n int
-	fmt.Print("Masukkan jumlah suku Fibonacci yang ingin dicetak: ")
-	fmt.Scanln(&n)
-
-	fmt.Println("Deret Fibonacci hingga suku ke-", n)
-	for i := 0; i < n; i++ {
-		fmt.Print(FibonacciAngka(i), " ")
+	var lingkaran1, lingkaran2 Lingkaran
+	var titikSembarang Titik
+	var didalam1, didalam2 bool
+	fmt.Scanln(&lingkaran1.titikPusat.x, &lingkaran1.titikPusat.y, &lingkaran1.radius)
+	fmt.Scanln(&lingkaran2.titikPusat.x, &lingkaran2.titikPusat.y, &lingkaran2.radius)
+	fmt.Scanln(&titikSembarang.x, &titikSembarang.y)
+	didalam1 = cekDidalam(lingkaran1, getJarak(lingkaran1, titikSembarang))
+	didalam2 = cekDidalam(lingkaran2, getJarak(lingkaran2, titikSembarang))
+	switch {
+	case didalam2 && didalam1:
+		fmt.Print("Titik di dalam lingkaran 1 dan 2")
+	case didalam1:
+		fmt.Print("Titik di dalam lingkaran 1")
+	case didalam2:
+		fmt.Print("Titik di dalam lingkaran 2")
+	default:
+		fmt.Print("Titik di luar lingkaran 1 dan 2")
 	}
-	fmt.Println()
 }
 ```
 ### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/60e7bb01-1036-4108-a2d7-25ebc29edb8e)
 
 
 ### Screenshot output
-![Screenshot 2024-11-03 151606](https://github.com/user-attachments/assets/b97174e8-8961-4852-b73b-d89495c866ff)
+![Screenshot 2024-11-17 193752](https://github.com/user-attachments/assets/a96620b3-6aac-40ac-8454-3f16ce8d52bc)
+
 
 
 ### Deskripsi Program
@@ -314,41 +332,143 @@ Contoh: Jika pengguna memasukkan n = 5, program mencetak 0 1 1 2 3.
 
 ## Unguided - 2
 ### Study Case
-**Buatlah sebuah program yang digunakan untuk menampilkan pola bintang berikut ini dengan menggunakan fungsi rekursif. N adalah masukan dari user.**
+Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilal. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa Informasi berikut:
+
+a. Menampilkan keseluruhan isi dari array.
+
+b. Menampilkan elemen-elemen array dengan indeks ganjil saja.
+
+c. Menampilkan elemen-elemen array dengan indeks genap saja (asumsi indek ke - 0 adalah genap).
+
+d. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x. x bisa diperoleh dari masukan pengguna.
+
+e. Menghapus elemen array pada indeks tertentu, asumsi indeks yang hapus selalu valid.. Tampilkan keseluruhan isi dari arraynya, pastikan data yang dihapus tidak tampil
+
+f. Menampilkan rata-rata dari bilangan yang ada di dalam array.
+
+g. Menampilkan standar deviasi atau simpangan baku dari bilangan yang ada di dalam array tersebut.
+
+h. Menampilkan frekuensi dari suatu bilangan tertentu di dalam array yang telah diisi tersebut.
 
 #### Source Code
 ```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func printBintang(n int) {
-	if n == 0 {
-		return
+func showMenu() {
+	fmt.Println("1. menampilkan seluruh isi array")
+	fmt.Println("2. Menampilkan elemen-elemen array dengan indeks ganjil saja.")
+	fmt.Println("3. Menampilkan elemen-elemen array dengan indeks genap saja (asumsi indek ke-0 adalah genap).")
+	fmt.Println("4. Menampilkan elemen-elemen array dengan indeks kelipatan bilangan x")
+	fmt.Println("5. Menghapus elemen array pada indeks tertentu.")
+	fmt.Println("6. Menampilkan rata-rata dari bilangan yang ada di dalam array.")
+	fmt.Println("7. Menampilkan standar deviasi atau simpangan baku")
+	fmt.Println("8. Menampilkan frekuensi dari suatu bilangan")
+	fmt.Println("9. Exit")
+	fmt.Print("Pilih menu : ")
+}
+
+func showData(arr []int, skip int, expect int, skipZero bool) {
+	for index, data := range arr {
+		if skipZero && index == 0 {
+			continue
+		}
+		if index%skip == expect {
+			fmt.Println("Index ke - ", index, " : ", data)
+		}
 	}
-	printBintang(n - 1)
-	for i := 0; i < n; i++ {
-		fmt.Print("*")
+}
+
+func reRata(arr []int) float64 {
+	var sum int
+	for _, data := range arr {
+		sum += data
 	}
-	fmt.Println()
+	return float64(sum) / float64(len(arr))
+}
+
+func simpBaku(arr []int) float64 {
+	var sum float64
+	for _, data := range arr {
+		sum += math.Pow(float64(data)-reRata(arr), 2)
+	}
+	return math.Sqrt(float64(sum) / float64(len(arr)))
+}
+
+func frek(arr []int, bil int) int {
+	var count int
+	for _, data := range arr {
+		if data == bil {
+			count++
+		}
+	}
+	return count
+}
+
+func removeIndex(index int, arr *[]int) {
+	if len(*arr)-1 < index {
+		fmt.Println("index out of range")
+	} else {
+		fmt.Println("item", (*arr)[index], "pada index", index, "telah dihapus\nisi Sekarang : ")
+		*arr = append((*arr)[:index], (*arr)[index+1:]...)
+		showData(*arr, 1, 0, false)
+	}
 }
 
 func main() {
-	var n int
-	fmt.Print("Masukkan N: ")
-	fmt.Scanln(&n)
-
-	printBintang(n)
+	var arraySize, input int
+	fmt.Print("Masukkan Kapasitas array : ")
+	fmt.Scan(&arraySize)
+	var newArr []int = make([]int, arraySize)
+	for index, _ := range newArr {
+		fmt.Print("Masukkan index ke -", index, " : ")
+		fmt.Scan(&newArr[index])
+	}
+	for input != 9 {
+		showMenu()
+		fmt.Scan(&input)
+		switch input {
+		case 1:
+			showData(newArr, 1, 0, false)
+		case 2:
+			showData(newArr, 2, 1, false)
+		case 3:
+			showData(newArr, 2, 0, false)
+		case 4:
+			fmt.Print("Masukkan Kelipatan : ")
+			fmt.Scan(&input)
+			showData(newArr, input, 0, true)
+		case 5:
+			fmt.Print("Masukkan index yang dihapus : ")
+			fmt.Scan(&input)
+			removeIndex(input, &newArr)
+		case 6:
+			fmt.Println("Rerata dari isi array adalah :", reRata(newArr))
+		case 7:
+			fmt.Println("Deviasi dari isi array adalah :", simpBaku(newArr))
+		case 8:
+			fmt.Print("Masukkan bilangan yang akan dicek : ")
+			fmt.Scan(&input)
+			fmt.Println("Frekuansi dari", input, "pada array adalah :", frek(newArr, input))
+		default:
+			fmt.Println("Opsi salah")
+		}
+	}
 }
 ```
 ### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/b6947558-523a-4c3f-8f76-a38a29d6a9cd)
 
 
 ### Screenshot Code
-![Screenshot 2024-11-03 151746](https://github.com/user-attachments/assets/7196b886-e329-4593-8bba-2c06ee01cf8e)
+![1](https://github.com/user-attachments/assets/5ca9ee4f-bc3b-4993-ab86-23b2682e9c09)
+![3](https://github.com/user-attachments/assets/29de9e02-3eba-45c7-a06c-31b64de2a331)
+![2](https://github.com/user-attachments/assets/4b3787ed-9643-4cdb-9cc9-22002ed69a3e)
+
 
 
 ### Deskripsi Program
@@ -359,44 +479,68 @@ Program ini mencetak pola segitiga bintang secara rekursif berdasarkan nilai n y
 
 ## Unguided - 3
 ### Study Case
-**Buatlah program yang mengimplementasikan rekursif untuk menampilkan faktor bilangan dari suatu N, atau bilangan yang apa saja yang habis membagi N.**                                        
-*Masukan terdiri dari sebuah bilangan bulat positif N.*                                                        
-*Keluaran terdiri dari barisan bilangan yang menjadi faktor dari N (terurut dari 1 hingga N ya).*
+**Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga.**
+
+*Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja.
+Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.*                                                        
 
 #### Source Code
 ```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
 package main
 
 import "fmt"
 
-func findFactors(n int, i int) {
-	if i > n {
-		return
+type Pertandingan struct {
+	klubA             string
+	klubB             string
+	hasilPertandingan []string
+}
+
+func hitung(dataClub Pertandingan, skor1, skor2 int) string {
+	if skor1 > skor2 {
+		return dataClub.klubA
+	} else if skor1 == skor2 {
+		return "Draw"
+	} else {
+		return dataClub.klubB
 	}
-	if n%i == 0 {
-		fmt.Printf("%d ", i)
+}
+
+func showHasil(dataClub Pertandingan) {
+	for i, data := range dataClub.hasilPertandingan {
+		fmt.Printf("Hasil %d : %s\n", i+1, data)
 	}
-	findFactors(n, i+1)
+	fmt.Println("Pertandingan selesai")
 }
 
 func main() {
-	var n int
-	fmt.Print("Masukkan bilangan bulat positif: ")
-	fmt.Scan(&n)
+	var skor1, skor2, count int
+	var dataTanding Pertandingan
+	fmt.Print("Klub A : ")
+	fmt.Scan(&dataTanding.klubA)
+	fmt.Print("Klub B : ")
+	fmt.Scan(&dataTanding.klubB)
+	for {
+		fmt.Printf("Pertandingan %d : ", count+1)
+		fmt.Scan(&skor1, &skor2)
+		if skor1 >= 0 && skor2 >= 0 {
+			dataTanding.hasilPertandingan = append(dataTanding.hasilPertandingan, hitung(dataTanding, skor1, skor2))
+			count++
+		} else {
+			break
+		}
 
-	fmt.Printf("Faktor dari %d adalah: ", n)
-	findFactors(n, 1)
-	fmt.Println()
+	}
+	showHasil(dataTanding)
 }
 ```
 ### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/bb961cf8-5436-454f-896b-bca9acab8fe9)
 
 
 ### Screenshot Code
-![Screenshot 2024-11-03 151842](https://github.com/user-attachments/assets/9c358852-5498-4db0-81df-c70012166e43)
+![Screenshot 2024-11-17 195422](https://github.com/user-attachments/assets/ca4c703f-eec2-4300-9f8e-7173ac09cac0)
+
 
 
 ### Deskripsi Program
@@ -407,44 +551,67 @@ Program ini mencari dan menampilkan semua faktor dari bilangan bulat positif n y
 
 ## Unguided - 4
 ### Study Case
-**Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan tertentu.**                             
-*Masukan terdiri dari sebuah bilangan bulat positif N.*                                                                 
-*Keluaran terdiri dari barisan bilangan dari N hingga 1 dan kembali ke N.*
+**Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan Isi array dan memeriksa apakah membentuk palindrom.**                             
+*Modifikasi program tersebut dengan menambahkan fungsi palindrom. Tambahkan instruksi untuk memanggil fungsi tersebut dan menampilkan hasilnya pada program utama.*
 
 #### Source Code
 ```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
 package main
 
 import "fmt"
 
-func printSekuensial(n int) {
-	if n == 1 {
-		fmt.Print(n, " ")
-	} else {
-		fmt.Print(n, " ")
-		printSekuensial(n - 1)
-		fmt.Print(n, " ")
+const NMAX int = 127
+
+type tabel [NMAX]rune
+
+func isiArray(t *tabel, n *int) {
+	var temp_inp rune
+	for *n < NMAX {
+		fmt.Scanf("%c", &temp_inp)
+		if temp_inp == '.' {
+			break
+		} else if temp_inp == ' ' {
+			continue
+		}
+		t[*n] = temp_inp
+		*n++
 	}
 }
 
-func main() {
-	var n int
-	fmt.Print("Masukkan bilangan bulat positif N: ")
-	fmt.Scanln(&n)
-
-	fmt.Print("Keluaran: ")
-	printSekuensial(n)
+func cetakArray(t tabel, n int) {
+	for i := 0; i < n; i++ {
+		fmt.Printf("%c", t[i])
+		fmt.Print(" ")
+	}
 	fmt.Println()
+}
+
+func balikanArray(t *tabel, n int) {
+	var dat tabel
+
+	for i := n - 1; i >= 0; i-- {
+		dat[(n-1)-i] = t[i]
+	}
+	copy((*t)[:], dat[:])
+}
+
+func main() {
+	var tab tabel
+	var m int
+	fmt.Print("Teks\t\t: ")
+	isiArray(&tab, &m)
+	balikanArray(&tab, m)
+	fmt.Print("Reverse Teks\t: ")
+	cetakArray(tab, m)
 }
 ```
 ### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/ee1a9e5b-9c3d-4dbf-9f74-352249f25019)
 
 
 ### Screenshot Code
-![Screenshot 2024-11-03 151919](https://github.com/user-attachments/assets/b64f5293-30c3-4bf2-ad4f-2164e531efbc)
+![Screenshot 2024-11-17 195907](https://github.com/user-attachments/assets/d5b4e434-b9e4-4786-883d-d52772487b99)
+
 
 
 ### Deskripsi Program
@@ -453,98 +620,3 @@ Program ini mencetak urutan bilangan secara berurutan dari n ke 1, lalu kembali 
 1. Fungsi printSekuensial: Jika n adalah 1, program mencetak 1. Jika tidak, program mencetak n, lalu memanggil dirinya sendiri dengan n - 1 untuk mencetak bilangan berikutnya secara berurutan, kemudian kembali mencetak n setelah rekursi selesai.
 2. Fungsi main: Meminta input n dari pengguna dan memanggil fungsi printSekuensial untuk mencetak pola.
 
-## Unguided - 5
-### Study Case
-**Buatlah program yang mengimplementasikan rekursif untuk menampilkan barisan bilangan ganjil.**                                 
-*Masukan terdiri dari sebuah bilangan bulat positif N.*                                        
-*Keluaran terdiri dari barisan bilangan ganjil dari 1 hingga N.*
-
-#### Source Code
-```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
-package main
-
-import "fmt"
-
-func cetakBilanganGanjil(n int) {
-	if n >= 1 {
-		cetakBilanganGanjil(n - 2)
-		fmt.Print(n, " ")
-	}
-}
-
-func main() {
-	var n int
-	fmt.Print("Masukkan bilangan bulat positif N: ")
-	fmt.Scanln(&n)
-
-	fmt.Println("Barisan bilangan ganjil dari 1 hingga", n, "adalah:")
-	cetakBilanganGanjil(n)
-}
-```
-### Screenshot Source Code
-
-
-### Screenshot Code
-![Screenshot 2024-11-03 152016](https://github.com/user-attachments/assets/57d34524-189b-4327-bfae-035aad3bfc99)
-
-
-### Deskripsi Program
-Program ini mencetak bilangan ganjil dari 1 hingga n secara berurutan menggunakan rekursi.
-
-1. Fungsi cetakBilanganGanjil: Jika n lebih besar atau sama dengan 1, fungsi ini memanggil dirinya sendiri dengan nilai n - 2 (mengurangi 2 setiap kali untuk mendapatkan bilangan ganjil sebelumnya), lalu mencetak nilai n setelah rekursi. Fungsi ini memastikan bilangan ganjil dicetak dalam urutan menaik.
-2. Fungsi main: Meminta input n dari pengguna dan memanggil cetakBilanganGanjil untuk mencetak bilangan ganjil dari 1 hingga n.
-
-## Unguided - 6
-### Study Case
-**Buatlah program yang mengimplementasikan rekursif untuk mencari hasil pangkat dari dua buah bilangan.**                                     
-*Masukan terdiri dari bilangan bulat x dan y.*                                        
-*Keluaran terdiri dari hasil x dipangkatkan y.*    
-
-#### Source Code
-```go
-// Rangga Pradarrell Fathi
-// 2311102200
-// IF-11-05
-package main
-
-import "fmt"
-
-func pangkat(x, y int) int {
-	if y == 0 {
-		return 1
-	}
-	hasil := 0
-	for i := 0; i < y; i++ {
-		if i == 0 {
-			hasil = x
-		} else {
-			hasil += x 
-		}
-	}
-	return hasil
-}
-
-func main() {
-	var x, y int
-	fmt.Scan(&x)
-	fmt.Scanln(&y)
-
-	hasil := pangkat(x, y)
-	fmt.Printf("%d pangkat %d = %d\n", x, y, hasil)
-}
-```
-### Screenshot Source Code
-
-
-### Screenshot Code
-![Screenshot 2024-11-03 212955](https://github.com/user-attachments/assets/99dd1e1d-e8a8-41b6-81fa-a2d7ac049834)
-
-
-### Deskripsi Program
-Program ini seharusnya menghitung pangkat dari bilangan x dengan eksponen y, tetapi terdapat kesalahan dalam implementasi fungsi pangkat.
-
-1. Fungsi pangkat(x, y int) int: Fungsi ini dirancang untuk menghitung hasil x pangkat y, tetapi menggunakan penjumlahan berulang alih-alih perkalian berulang. Logika dalam fungsi ini hanya menjumlahkan x sebanyak y kali, yang sebenarnya menghasilkan x * y dan bukan x^y.
-2. Fungsi main: Meminta pengguna memasukkan nilai x dan y, kemudian memanggil fungsi pangkat untuk menghitung hasil, dan menampilkannya.
