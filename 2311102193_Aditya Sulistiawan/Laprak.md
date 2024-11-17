@@ -81,8 +81,6 @@ Andy Brinker
 andy@example.com
 ```
 
-
-
 # <strong> Guided </strong>
 ## Guided - 1
 ### Study Case
@@ -120,10 +118,8 @@ fmt.Printf("Lama parkir: %d jam %d menit %d detik", durasi.jam, durasi.menit, du
 ### Screenshot Source Code
 ![Source code](https://github.com/user-attachments/assets/909cf2e2-3f8a-4ad9-9191-0b01436a05ab)
 
-
 ### Screenshot Output
 ![Gui1](https://github.com/user-attachments/assets/98694a45-5f6a-4093-bdc8-bd04d1868d99)
-
 
 #### Deskripsi Program
 Program di atas menghitung berapa lama kendaraan parkir dalam jam, menit, dan detik. Pengguna harus menginput waktu masuk (saat mulai parkir) dan waktu keluar (saat selesai parkir) dalam format jam, menit, dan detik. Kemudian program akan menghitung berapa lama mobil parkir dengan menghitung selisih waktu antara kedua waktu tersebut dalam format yang sama.
@@ -172,10 +168,8 @@ func main() {
 ### Screenshot Source Code
 ![carbon](https://github.com/user-attachments/assets/0c973ea0-6d93-447f-80b0-6fd279a7c362)
 
-
 ### Screenshot Output
 ![1](https://github.com/user-attachments/assets/4591490d-2baf-4ada-acb8-88b6b6caec23)
-
 
 ### Deskripsi Program
 Program mencetak daftar harga semua buah menggunakan perulangan for yang mengulangi setiap elemen dalam peta. Setiap pasangan kunci dan nilai dicetak menggunakan fungsi fmt.Printf dengan format yang rapi. Terakhir, program secara khusus mengakses harga buah "Mangga" menggunakan kunci langsung dari peta dan mencetaknya dengan pernyataan fmt.Print. Program berjalan dengan baik dan cocok untuk mengelola data berpasangan seperti ini.
@@ -235,14 +229,10 @@ func main() {
 ### Screenshot Source Code
 ![carbon](https://github.com/user-attachments/assets/67ad822f-ceba-4142-9d78-34eab89199ee)
 
-
 ### Screenshot Output
 ![Screenshot 2024-11-17 173007](https://github.com/user-attachments/assets/7291f717-2869-44d7-b7df-cd5f996cb439)
 
-
-
 ### Deskripsi Program
-
 Program ini menggunakan struktur data map dalam bahasa Go untuk menyimpan dan menampilkan harga berbagai buah. Dalam map, setiap nama buah digunakan sebagai kunci, dan harga buah tersebut digunakan sebagai nilai.
 
 ### Algoritma Program
@@ -253,7 +243,6 @@ Program ini menggunakan struktur data map dalam bahasa Go untuk menyimpan dan me
    - Jika belum ada, tambahkan ke daftar.  
    - Jika sudah ada, tampilkan pesan.  
 5. Cetak daftar teman akhir.  
-
 
 Cara kerja program
 Program dimulai dengan daftar teman awal. Lalu, setiap nama baru diperiksa apakah sudah ada dalam daftar menggunakan fungsi cek. Nama yang tidak ada ditambahkan, sedangkan yang sudah ada menunjukkan pesan. Akhirnya, daftar teman yang diperbarui ditampilkan.
@@ -317,18 +306,27 @@ func main() {
 ### Screenshot Source Code
 ![carbon](https://github.com/user-attachments/assets/60e7bb01-1036-4108-a2d7-25ebc29edb8e)
 
-
 ### Screenshot output
 ![Screenshot 2024-11-17 193752](https://github.com/user-attachments/assets/a96620b3-6aac-40ac-8454-3f16ce8d52bc)
 
-
-
 ### Deskripsi Program
-Program ini menghasilkan deret Fibonacci hingga jumlah suku ke-n yang dimasukkan pengguna.
+Program ini digunakan untuk memeriksa apakah sebuah titik berada di dalam dua lingkaran yang berbeda. Setiap lingkaran didefinisikan oleh pusatnya (koordinat x, y) dan radiusnya. Program ini akan menerima input untuk dua lingkaran dan satu titik, kemudian memeriksa apakah titik tersebut berada di dalam lingkaran pertama, kedua, atau keduanya.
 
-1. Fungsi FibonacciAngka menghitung nilai suku ke-n dalam deret Fibonacci secara rekursif.
-2. Fungsi main meminta input n, kemudian menggunakan loop untuk mencetak deret Fibonacci dari suku pertama hingga ke-n.
-Contoh: Jika pengguna memasukkan n = 5, program mencetak 0 1 1 2 3.
+**Algoritma**  
+1. Masukkan data untuk dua lingkaran (koordinat pusat dan radius) serta titik sembarang.
+2. Hitung jarak antara titik sembarang dengan pusat setiap lingkaran menggunakan rumus jarak Euclidean.
+3. Periksa apakah jarak tersebut lebih kecil atau sama dengan radius lingkaran untuk menentukan apakah titik tersebut berada di dalam lingkaran.
+4. Tampilkan hasilnya sesuai kondisi:
+   - Titik berada di dalam kedua lingkaran.
+   - Titik berada di dalam lingkaran pertama.
+   - Titik berada di dalam lingkaran kedua.
+   - Titik berada di luar kedua lingkaran.
+
+**Cara Kerja**  
+1. Input data lingkaran dan titik.
+2. Fungsi `getJarak` menghitung jarak titik dari pusat lingkaran.
+3. Fungsi `cekDidalam` membandingkan jarak dengan radius lingkaran untuk memeriksa apakah titik di dalam lingkaran.
+4. Berdasarkan kondisi ini, program akan mencetak status keberadaan titik relatif terhadap kedua lingkaran.
 
 ## Unguided - 2
 ### Study Case
@@ -463,19 +461,36 @@ func main() {
 ### Screenshot Source Code
 ![carbon](https://github.com/user-attachments/assets/b6947558-523a-4c3f-8f76-a38a29d6a9cd)
 
-
 ### Screenshot Code
 ![1](https://github.com/user-attachments/assets/5ca9ee4f-bc3b-4993-ab86-23b2682e9c09)
 ![3](https://github.com/user-attachments/assets/29de9e02-3eba-45c7-a06c-31b64de2a331)
 ![2](https://github.com/user-attachments/assets/4b3787ed-9643-4cdb-9cc9-22002ed69a3e)
 
-
-
 ### Deskripsi Program
-Program ini mencetak pola segitiga bintang secara rekursif berdasarkan nilai n yang dimasukkan pengguna.
+Program ini memungkinkan pengguna untuk mengelola dan menganalisis array. Pengguna dapat memilih berbagai menu untuk menampilkan elemen array berdasarkan kondisi tertentu, menghitung rata-rata dan deviasi standar elemen array, menghitung frekuensi bilangan tertentu, serta menghapus elemen pada indeks tertentu. Program terus berjalan hingga pengguna memilih untuk keluar.
 
-1. Fungsi printBintang: Fungsi ini mencetak n baris bintang, dengan setiap baris memiliki jumlah bintang yang meningkat dari 1 hingga n. Fungsi ini dipanggil secara rekursif, mulai dari n = 1 hingga mencapai jumlah bintang sesuai nilai n.
-2. Fungsi main: Meminta input n dari pengguna dan memanggil fungsi printBintang untuk mencetak pola bintang.
+**Algoritma**  
+1. Masukkan ukuran array dan elemen-elemen array dari input pengguna.
+2. Tampilkan menu dengan beberapa pilihan untuk manipulasi dan analisis array.
+3. Untuk setiap pilihan:
+   - Menampilkan seluruh isi array.
+   - Menampilkan elemen dengan indeks ganjil atau genap.
+   - Menampilkan elemen dengan indeks kelipatan tertentu.
+   - Menghapus elemen pada indeks tertentu.
+   - Menghitung rata-rata, deviasi standar, atau frekuensi elemen tertentu dalam array.
+4. Program berulang hingga pengguna memilih untuk keluar (pilihan 9).
+
+**Cara Kerja**  
+1. Input ukuran dan elemen array.
+2. Pilih menu yang diinginkan.
+3. Berdasarkan pilihan:
+   - Fungsi `showData` digunakan untuk menampilkan elemen-elemen array sesuai kondisi.
+   - Fungsi `reRata` menghitung rata-rata elemen.
+   - Fungsi `simpBaku` menghitung deviasi standar.
+   - Fungsi `frek` menghitung frekuensi elemen.
+   - Fungsi `removeIndex` menghapus elemen pada indeks tertentu.
+4. Setelah menu dipilih dan diproses, tampilkan hasil atau array yang sudah dimodifikasi.
+5. Program terus berjalan hingga pilihan "Exit" (menu 9) dipilih.
 
 ## Unguided - 3
 ### Study Case
@@ -542,12 +557,26 @@ func main() {
 ![Screenshot 2024-11-17 195422](https://github.com/user-attachments/assets/ca4c703f-eec2-4300-9f8e-7173ac09cac0)
 
 
-
 ### Deskripsi Program
-Program ini mencari dan menampilkan semua faktor dari bilangan bulat positif n yang dimasukkan oleh pengguna.
+Program ini digunakan untuk mencatat hasil pertandingan antara dua klub sepak bola. Setiap pertandingan akan mencatat skor kedua tim dan menentukan pemenangnya. Program akan terus menerima input skor hingga pengguna memasukkan skor negatif, dan kemudian menampilkan hasil pertandingan yang telah tercatat.
 
-1. Fungsi findFactors: Fungsi ini menggunakan rekursi untuk mencari faktor dari n, mulai dari 1 hingga n. Jika n habis dibagi i, maka i adalah faktor dari n, dan program mencetak i.
-2. Fungsi main: Meminta input n dari pengguna dan memanggil findFactors untuk menampilkan faktor-faktor dari n.
+**Algoritma**  
+1. Masukkan nama klub A dan B.
+2. Untuk setiap pertandingan, masukkan skor kedua klub.
+3. Tentukan pemenang berdasarkan skor:
+   - Jika skor klub A lebih tinggi, klub A menang.
+   - Jika skor klub B lebih tinggi, klub B menang.
+   - Jika skor sama, hasilnya "Draw".
+4. Proses ini berlanjut hingga salah satu skor yang dimasukkan negatif, yang menandakan akhir dari input pertandingan.
+5. Tampilkan hasil pertandingan yang telah tercatat.
+
+**Cara Kerja**  
+1. Program meminta nama klub A dan B.
+2. Program meminta input skor untuk setiap pertandingan secara berulang.
+3. Fungsi `hitung` digunakan untuk menentukan hasil pertandingan berdasarkan skor.
+4. Hasil pertandingan ditambahkan ke dalam array `hasilPertandingan`.
+5. Program berhenti menerima input jika ada skor yang bernilai negatif.
+6. Fungsi `showHasil` menampilkan semua hasil pertandingan yang tercatat.
 
 ## Unguided - 4
 ### Study Case
@@ -608,15 +637,20 @@ func main() {
 ### Screenshot Source Code
 ![carbon](https://github.com/user-attachments/assets/ee1a9e5b-9c3d-4dbf-9f74-352249f25019)
 
-
 ### Screenshot Code
 ![Screenshot 2024-11-17 195907](https://github.com/user-attachments/assets/d5b4e434-b9e4-4786-883d-d52772487b99)
 
-
-
 ### Deskripsi Program
-Program ini mencetak urutan bilangan secara berurutan dari n ke 1, lalu kembali dari 1 ke n menggunakan rekursi.
+Program ini menerima input teks dari pengguna, kemudian membalikkan urutan karakter dalam teks tersebut. Hasil teks yang sudah dibalik akan ditampilkan sebagai output. Program bekerja dengan menggunakan array untuk menyimpan karakter-karakter teks dan mengelola operasi pembalikan urutan.
 
-1. Fungsi printSekuensial: Jika n adalah 1, program mencetak 1. Jika tidak, program mencetak n, lalu memanggil dirinya sendiri dengan n - 1 untuk mencetak bilangan berikutnya secara berurutan, kemudian kembali mencetak n setelah rekursi selesai.
-2. Fungsi main: Meminta input n dari pengguna dan memanggil fungsi printSekuensial untuk mencetak pola.
+**Algoritma**  
+1. Membaca karakter-karakter input hingga tanda titik (.) ditemukan atau array penuh (127 karakter).
+2. Setiap karakter disimpan dalam array, dengan mengabaikan spasi.
+3. Setelah input selesai, array yang berisi teks dibalik urutannya.
+4. Tampilkan teks hasil pembalikan.
 
+**Cara Kerja**  
+1. Program meminta input teks dan menyimpannya dalam array `tabel` menggunakan fungsi `isiArray`.
+2. Fungsi `balikanArray` digunakan untuk membalik urutan elemen dalam array.
+3. Fungsi `cetakArray` digunakan untuk menampilkan hasil teks yang telah dibalik.
+4. Proses selesai setelah teks yang dibalik ditampilkan.
