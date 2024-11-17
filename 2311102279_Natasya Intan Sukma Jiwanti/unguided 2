@@ -1,0 +1,112 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var n int
+	fmt.Print("Masukkan ukuran array: ")
+	fmt.Scan(&n)
+	array := make([]int, n)
+
+	for i := 0; i < n; i++ {
+		fmt.Print("Masukkan array indeks ke-", i, " : " )
+		fmt.Scan(&array[i])
+	}
+
+	pilihanmenu(array)
+}
+
+func pilihanmenu(arr []int) {
+	var pilihan int
+	n := len(arr) 
+
+	fmt.Println("-----MENU PENGOLAHAN DATA ARRAY-----")
+	fmt.Println("1. Tampilkan seluruh isi")
+	fmt.Println("2. Elemen Array ber-indeks ganjil")
+	fmt.Println("3. Elemen Array ber-indeks genap")
+	fmt.Println("4. Tampilkan elemen array kelipatan x")
+	fmt.Println("5. Hapus elemen array indeks tertentu")
+	fmt.Println("6. Rata - rata isi array")
+	fmt.Println("7. Simpangan baku dari array")
+	fmt.Println("8. Tampilkan Frekuensi suatu bilangan")
+	fmt.Println("Masukkan pilihan anda: ")
+	fmt.Scan(&pilihan)
+
+	switch pilihan {
+	case 1:
+		for i := 0; i < n; i++ {
+			fmt.Print(arr[i], " ")
+		}
+		fmt.Println()
+	case 2:
+		for i := 1; i < n; i += 2 {
+			fmt.Print(arr[i], " ")
+		}
+		fmt.Println()
+	case 3:
+		for i := 0; i < n; i += 2 {
+			fmt.Print(arr[i], " ")
+		}
+		fmt.Println()
+	case 4:
+		var x int
+		fmt.Print("Masukkan nilai x: ")
+		fmt.Scan(&x)
+		for i := 0; i < n; i++ {
+			if arr[i]%x == 0 {
+				fmt.Print(arr[i], " ")
+			}
+		}
+		fmt.Println()
+	case 5:
+		var index int
+		fmt.Print("Masukkan indeks yang ingin dihapus: ")
+		fmt.Scan(&index)
+		if index < 0 || index >= n {
+			fmt.Println("Indeks tidak valid!")
+			return
+		}
+		newArr := make([]int, 0, n-1)
+		for i := 0; i < n; i++ {
+			if i != index {
+				newArr = append(newArr, arr[i])
+			}
+		}
+		fmt.Println("Array setelah penghapusan:", newArr)
+	case 6:
+		var jumlah int
+		for i := 0; i < n; i++ {
+			jumlah += arr[i]
+		}
+		rata := float64(jumlah) / float64(n)
+		fmt.Println("Rata-rata elemen array adalah:", rata)
+	case 7:
+		var selisih, totalselisih float64
+		var jumlah int
+		for i := 0; i < n; i++ {
+			jumlah += arr[i]
+		}
+		rata := float64(jumlah) / float64(n)
+		for i := 0; i < n; i++ {
+			selisih = float64(arr[i]) - rata
+			totalselisih += selisih * selisih
+		}
+		simpanganbaku := math.Sqrt(totalselisih / float64(n))
+		fmt.Println("Simpangan baku pada array adalah:", simpanganbaku)
+	case 8:
+		var frekuensi, x int
+		fmt.Print("Masukkan nilai x: ")
+		fmt.Scan(&x)
+		for i := 0; i < n; i++ {
+			if arr[i] == x {
+				frekuensi++
+			}
+		}
+		fmt.Printf("Frekuensi bilangan %d pada array adalah %d\n", x, frekuensi)
+	default:
+		fmt.Println("Pilihan tidak valid!")
+	}
+}
