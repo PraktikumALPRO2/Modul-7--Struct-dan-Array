@@ -1,4 +1,4 @@
-<p align="center">
+ <p align="center">
   <strong>LAPORAN PRAKTIKUM</strong>
   <br>
   <strong>ALGORITMA DAN PEMROGRAMAN 2</strong>
@@ -145,9 +145,57 @@ Program ini dibuat untuk menghitung berapa lama mobil parkir berdasarkan waktu m
 ## Guided - 2
 #### Source Code
 ```go
-//Rangga Pradarrell Fathi
-//2311102200
-//IF-11-05
+//Guided 2 - Map
+package main 
+
+import (
+	"fmt"
+)
+
+func main() {
+	// Membuat map dengan nama buah sebagai kunci dan harga sebagai nilai
+	hargaBuah := map[string]int{
+		"Apel":  5000,
+		"Pisang": 3000,
+		"Mangga": 7000,
+	}
+
+	// Menampilkan harga dari setiap buah
+	fmt.Println("Harga Buah:")
+	for buah, harga := range hargaBuah {
+		fmt.Printf("%s: Rp%d\n", buah, harga)
+	}
+
+	fmt.Print("Harga buah Mangga = ", hargaBuah["Mangga"])
+}
+```
+### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/0c973ea0-6d93-447f-80b0-6fd279a7c362)
+
+
+### Screenshot Output
+![1](https://github.com/user-attachments/assets/4591490d-2baf-4ada-acb8-88b6b6caec23)
+
+
+### Deskripsi Program
+Program mencetak daftar harga semua buah menggunakan perulangan for yang mengulangi setiap elemen dalam peta. Setiap pasangan kunci dan nilai dicetak menggunakan fungsi fmt.Printf dengan format yang rapi. Terakhir, program secara khusus mengakses harga buah "Mangga" menggunakan kunci langsung dari peta dan mencetaknya dengan pernyataan fmt.Print. Program berjalan dengan baik dan cocok untuk mengelola data berpasangan seperti ini.
+
+### Algoritma Program
+1. Buat daftar yang menyimpan nama buah dan harganya.  
+2. Masukkan data harga untuk Apel, Pisang, dan Mangga.  
+3. Cetak tulisan "Harga Buah:" untuk memberi tahu pengguna.  
+4. Tampilkan semua nama buah beserta harganya satu per satu.  
+5. Tampilkan harga buah Mangga secara khusus.  
+
+Cara kerja program 
+1. Program membuat daftar berisi nama buah dan harganya.  
+2. Program menampilkan semua buah dan harga satu per satu.  
+3. Program menunjukkan harga buah Mangga secara langsung.  
+
+## Guided - 3
+#### Source Code
+```go
+// Guided 2 - Slice
 package main
 
 import (
@@ -185,59 +233,39 @@ func main() {
 }
 ```
 ### Screenshot Source Code
+![carbon](https://github.com/user-attachments/assets/67ad822f-ceba-4142-9d78-34eab89199ee)
 
 
 ### Screenshot Output
-![image](https://github.com/user-attachments/assets/41a822b4-e57b-4d0d-9d88-be77b537dc9e)
+![Screenshot 2024-11-17 173007](https://github.com/user-attachments/assets/7291f717-2869-44d7-b7df-cd5f996cb439)
 
-### Deskripsi Program
-Program berikut adalah program sederhana dalam bahasa Go yang melakukan beberapa tugas utama, yaitu memeriksa dan menambahkan nama baru ke dalam daftar teman yang sudah ada, dengan syarat nama tersebut belum ada dalam daftar. Jika nama sudah ada, program akan memberi tahu pengguna bahwa nama tersebut telah terdaftar.
-
-## Guided - 3
-#### Source Code
-```go
-//Rangga Pradarrell Fathi
-//2311102200
-//IF-11-05
-//Guided 2 - Map
-
-import (
-	"fmt"
-)
-
-func main() {
-	// Membuat map dengan nama buah sebagai kunci dan harga sebagai nilai
-	hargaBuah := map[string]int{
-		"Apel":  5000,
-		"Pisang": 3000,
-		"Mangga": 7000,
-	}
-
-	// Menampilkan harga dari setiap buah
-	fmt.Println("Harga Buah:")
-	for buah, harga := range hargaBuah {
-		fmt.Printf("%s: Rp%d\n", buah, harga)
-	}
-
-	fmt.Print("Harga buah Mangga = ", hargaBuah["Mangga"])
-}
-```
-### Screenshot Source Code
-
-
-### Screenshot Output
-![image](https://github.com/user-attachments/assets/9ad9ce96-7aa3-441f-aee7-5dd903c01450)
 
 
 ### Deskripsi Program
 
 Program ini menggunakan struktur data map dalam bahasa Go untuk menyimpan dan menampilkan harga berbagai buah. Dalam map, setiap nama buah digunakan sebagai kunci, dan harga buah tersebut digunakan sebagai nilai.
 
+### Algoritma Program
+1. Buat fungsi untuk mengecek apakah nama ada di daftar.  
+2. Buat daftar teman awal.  
+3. Siapkan nama-nama baru yang ingin ditambahkan.  
+4. Periksa setiap nama baru:  
+   - Jika belum ada, tambahkan ke daftar.  
+   - Jika sudah ada, tampilkan pesan.  
+5. Cetak daftar teman akhir.  
+
+
+Cara kerja program
+Program dimulai dengan daftar teman awal. Lalu, setiap nama baru diperiksa apakah sudah ada dalam daftar menggunakan fungsi cek. Nama yang tidak ada ditambahkan, sedangkan yang sudah ada menunjukkan pesan. Akhirnya, daftar teman yang diperbarui ditampilkan.
+
 
 # <strong> Unguided </strong>
 ## Unguided - 1
 ### Study Case
-**Deret fibonacci adalah sebuah deret dengan nilai suku ke-O dan ke-1 adalah O dan 1, dan nilai suku ke-n selanjutnya adalah hasil penjumlahan dua suku sebelumnya. Secara umum dapat diformulasikan S=Sn-1+Sn-2 Berikut ini adalah contoh nilai deret fibonacci hingga suku ke-10. Buatlah program yang mengimplementasikan fungsi rekursif pada deret fibonассі tersebut.**
+**Suatu lingkaran didefinisikan dengan koordinat titik pusat (cx, cy) dengan radius r. Apabila diberikan dua buah lingkaran, maka tentukan posisi sebuah titik sembarang (x, y) berdasarkan dua lingkaran tersebut. Gunakan tipe bentukan titik untuk menyimpan koordinat, dan tipe bentukan lingkaran untuk menyimpan titik pusat lingkaran dan radiusnya.**
+
+_Masukan terdiri dari beberapa tiga baris. Baris pertama dan kedua adalah koordinat titik pusat dan radius dari lingkaran 1 dan lingkaran 2, sedangkan baris ketiga adalah koordinat titik sembarang. Asumsi sumbu x dan y dari semua titik dan juga radius direpresentasikan dengan bilangan bulat.
+Keluaran berupa string yang menyatakan posisi titik "Titik di dalam lingkaran 1 dan 2", "Titik di dalam lingkaran 1", "Titik di dalam lingkaran 2", atau "Titik di luar lingkaran 1 dan 2"._
 
 #### Source Code
 ```go
