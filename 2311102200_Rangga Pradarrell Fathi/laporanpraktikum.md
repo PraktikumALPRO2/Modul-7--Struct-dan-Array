@@ -293,7 +293,10 @@ func main() {
 }
 ```
 #### Screenshoot Output
-
+![Screenshot 2024-11-17 103007](https://github.com/user-attachments/assets/36d82fb0-c93e-41e3-9774-1d8f1d8d6c92)
+![Screenshot 2024-11-17 102858](https://github.com/user-attachments/assets/27f433a6-607f-4ccb-bb52-59c96b6eed11)
+![Screenshot 2024-11-17 102841](https://github.com/user-attachments/assets/5fb9ba2c-357e-4425-9748-13c02ec3cf50)
+![Screenshot 2024-11-17 102733](https://github.com/user-attachments/assets/bdaf0cb2-6e53-406c-a7ff-5ce6e4145929)
 
 #### Deskripsi Program
 Program ini merupakan program untuk memeriksa apakah titik berada di dalam atau di luar dua lingkaran berdasarkan koordinat pusat dan radius lingkaran. Program meminta input dari user untuk menentukan pusat dan radius lingkaran, koordinatnya akan diperiksa.
@@ -464,10 +467,16 @@ func main() {
 }
 
 ```
-#### Screenshoot Source Code
-
-
 #### Screenshoot Output
+![Screenshot 2024-11-17 103350](https://github.com/user-attachments/assets/a783f32c-8713-4a60-b5d0-4a0fb705594b)
+![Screenshot 2024-11-17 103448](https://github.com/user-attachments/assets/b64ec758-4f16-4b99-a1db-11348443cd0e)
+![Screenshot 2024-11-17 103442](https://github.com/user-attachments/assets/2bc1d3d8-10c0-4eed-aa84-fed34960356f)
+![Screenshot 2024-11-17 103435](https://github.com/user-attachments/assets/7750b866-addb-4849-85b4-e014a686705d)
+![Screenshot 2024-11-17 103429](https://github.com/user-attachments/assets/65d1be39-51fb-471b-909c-b4d15e4a1ae4)
+![Screenshot 2024-11-17 103422](https://github.com/user-attachments/assets/f4c0e23c-c9e0-4871-baeb-89a6f68d5e94)
+![Screenshot 2024-11-17 103415](https://github.com/user-attachments/assets/6603515b-e492-4b41-90ec-81d88af57692)
+![Screenshot 2024-11-17 103406](https://github.com/user-attachments/assets/4b90a5a7-2dc7-4b9a-b531-6221edf2f197)
+![Screenshot 2024-11-17 103359](https://github.com/user-attachments/assets/3606d1cf-aa68-40d2-99e5-6adb83e195d5)
 
 
 #### Deskripsi Program
@@ -546,10 +555,8 @@ func main() {
 	}
 }
 ```
-#### Screenshoot Source Code
-
-
 #### Screenshoot Output
+![Screenshot 2024-11-17 104951](https://github.com/user-attachments/assets/c58e8825-052e-4894-98bb-ede2b0f866f6)
 
 
 #### Deskripsi Program
@@ -646,6 +653,9 @@ func main() {
 
 ```
 #### Screenshoot Output
+![Screenshot 2024-11-17 104951](https://github.com/user-attachments/assets/aea30f19-eed4-4341-9f6d-8ef350845b65)
+![Screenshot 2024-11-17 105257](https://github.com/user-attachments/assets/884482d8-349f-4393-b12c-8877995afa6b)
+![Screenshot 2024-11-17 105247](https://github.com/user-attachments/assets/06edad08-f00a-485f-b957-0a88a120bae9)
 
 
 #### Deskripsi Program
