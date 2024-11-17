@@ -112,6 +112,15 @@ fmt.Printf("Lama parkir: %d jam %d menit %d detik", durasi.jam, durasi.menit, du
 ### Deskripsi Program
 Program di atas menghitung durasi waktu parkir dalam jam, menit, dan detik. Pengguna memasukkan waktu masuk (saat memulai parkir) dan waktu keluar (saat meninggalkan parkir) dalam format jam, menit, dan detik, kemudian program akan menghitung selisih waktu antara kedua waktu tersebut untuk mendapatkan durasi parkir dalam format yang sama.
 
+**Algoritma Program
+1. Pendefinisian Struct 'waktu'
+2. Pendeklarasian variabel
+3. Input data masuk dan pulang
+4. konversi waktu dalam detik
+5. Hitung lama parkir
+6. Konversi waktu dalam jam,menit,dan detik
+7. Output Durasi parkir
+
 
 ## Guided - 2
 #### Source Code
@@ -161,6 +170,11 @@ func main() {
 ### Deskripsi Program
 Program berikut adalah program sederhana dalam bahasa Go yang melakukan beberapa tugas utama, yaitu memeriksa dan menambahkan nama baru ke dalam daftar teman yang sudah ada, dengan syarat nama tersebut belum ada dalam daftar. Jika nama sudah ada, program akan memberi tahu pengguna bahwa nama tersebut telah terdaftar.
 
+Algoritma Program :
+1. Inisialisasi Map 'hargaBuah' dengan buah dan harga.
+2. Gunakan perulangan untuk menampilkan setiap buah dan harganya.
+3. Tampilkan harga untuk buah tertentu.
+   
 ## Guided - 3
 #### Source Code
 ```go
@@ -198,11 +212,16 @@ func main() {
 
 Program ini menggunakan struktur data map dalam bahasa Go untuk menyimpan dan menampilkan harga berbagai buah. Dalam map, setiap nama buah digunakan sebagai kunci, dan harga buah tersebut digunakan sebagai nilai.
 
+Algoritma Program :
+1. Inisialisasi slice 'daftarTeman'.
+2. Buat slice 'namaBaru' yang berisi nama yang akan ditambahkan ke dalam 'daftarTeman'.
+3. Menggunakan perulangan untuk mengecek nama.
+4. Tampilkan daftar teman akhir setelah adanya proses penambahan.
 
 # <strong> Unguided </strong>
 ## Unguided - 1
 ### Study Case
-**1. Suatu lingkaran didefinisikan dengan koordinat titik pusat (cx, cy) dengan radius r. Apabila diberikan dua buah lingkaran, maka tentukan posisi sebuah titik sembarang (x, y) berdasarkan dua lingkaran tersebut. Gunakan tipe bentukan titik untuk menyimpan koordinat, dan tipe bentukan lingkaran untuk menyimpan titik pusat lingkaran dan radiusnya.**                         
+Suatu lingkaran didefinisikan dengan koordinat titik pusat (cx, cy) dengan radius r. Apabila diberikan dua buah lingkaran, maka tentukan posisi sebuah titik sembarang (x, y) berdasarkan dua lingkaran tersebut. Gunakan tipe bentukan titik untuk menyimpan koordinat, dan tipe bentukan lingkaran untuk menyimpan titik pusat lingkaran dan radiusnya.**                         
 *Masukan terdiri dari beberapa tiga baris. Baris pertama dan kedua adalah koordinat titik pusat dan radius dari lingkaran 1 dan lingkaran 2, sedangkan baris ketiga adalah koordinat titik sembarang. Asumsi sumbu x dan y dari semua titik dan juga radius direpresentasikan dengan bilangan bulat.*                                 
 *Keluaran berupa string yang menyatakan posisi titik "Titik di dalam lingkaran 1 dan 2", "Titik di dalam lingkaran 1", "Titik di dalam lingkaran 2", atau "Titik di luar lingkaran 1 dan 2".*
 
@@ -280,15 +299,24 @@ func main() {
 Program ini merupakan program untuk memeriksa apakah titik berada di dalam atau di luar dua lingkaran berdasarkan koordinat pusat dan radius lingkaran. Program meminta input dari user untuk menentukan pusat dan radius lingkaran, koordinatnya akan diperiksa.
 
 Algoritma Program :
-1. Inisialisasi tipe data 'lingkaran' untuk menyimpan pusat dan radius lingkaran dan 'Titik' untuk menyimpan koordinat.
-2. Gunakan fungsi 'jarak' untuk menghitung jarak antar dua titik.
-3. Ambil input dari pengguna untuk koordinat pusat dan radius.
-4. Tentukan apakah titik berada di dalam lingkaran pertama, kedua, keduanya, atau di luar kedua lingkaran.
-5. Tampilkan hasil posisi titik.
+- Definisi Struktur Data: Program menggunakan struktur data Titik untuk menyimpan koordinat (x,y) dan Lingkaran untuk menyimpan pusat lingkaran dan radius.
+- Fungsi Perhitungan:
+			1. Jarak: Fungsi jarak menghitung jarak Euclidean antara dua titik.
+			2. Cek Posisi Titik: Fungsi diDalam mengevaluasi apakah titik berada di dalam atau pada lingkaran dengan membandingkan jarak titik ke pusat lingkaran dengan radius.
+- Input Data:
+	1. Program menerima input koordinat pusat dan radius untuk dua lingkaran.
+	2. Program juga menerima koordinat sebuah titik sembarang.
+Cek Posisi Titik: Mengevaluasi apakah titik berada di dalam lingkaran 1, lingkaran 2, atau keduanya, dengan menggunakan fungsi diDalam.
+- Output hasil berdasarkan kondisi:
+				1. Titik berada di dalam kedua lingkaran.
+				2. Titik hanya berada di salah satu lingkaran.
+				3. Titik berada di luar kedua lingkaran.
 
-Cara kerja dari program ini yaitu menggunakan fungsi 'jarak' untuk menghitung jarak antara pusat lingkaran dan titik sembarang. Dengan ini, program memeriksa titik berada di dalam lingkaran dengan membandingkan jarak dengan radius lingkaran. Hasilnya akan ditampilkan di akhir.
 
-**2. Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilal. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa Informasi berikut:**
+
+## Unguided - 2 
+### Study Case
+Sebuah array digunakan untuk menampung sekumpulan bilangan bulat. Buatlah program yang digunakan untuk mengisi array tersebut sebanyak N elemen nilal. Asumsikan array memiliki kapasitas penyimpanan data sejumlah elemen tertentu. Program dapat menampilkan beberapa Informasi berikut:**
 
 _a. Menampilkan keseluruhan isi dari array._
 
@@ -457,9 +485,9 @@ Algoritma Program :
 9. Hitung selisih dari array berdasarkan rata-rata elemen.
 10. Ambil input angka dari user dan hitung frekuensi angka dalam array.
 
-Cara kerja program ini yaitu meminta user memasukkan elemen array dan menampilkannya. Program dapat mengidentifikasi elemen yang berada pada ganjil, genap, dan kelipatan dari suatu nilai 'x'. User dapat menghapus elemen. Program menghitung rata-rata dan selisih elemen-elemen dalam array. Pada akhir, program menghitung dan menampilkan frekuensi angka dalam array.
-
-**3. Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga.**                       
+## Unguided - 3 
+### Study Case
+Sebuah program digunakan untuk menyimpan dan menampilkan nama-nama klub yang memenangkan pertandingan bola pada suatu grup pertandingan. Buatlah program yang digunakan untuk merekap skor pertandingan bola 2 buah klub bola yang berlaga.**                       
 
 *Pertama-tama program meminta masukan nama-nama klub yang bertanding, kemudian program meminta masukan skor hasil pertandingan kedua klub tersebut. Yang disimpan dalam array adalah nama-nama klub yang menang saja.*                                  
 *Proses input skor berhenti ketika skor salah satu atau kedua klub tidak valid (negatif). Di akhir program, tampilkan daftar klub yang memenangkan pertandingan.*
@@ -535,9 +563,10 @@ Algoritma Program :
 5. Hentikan perulangan jika skor tidak valid.
 6. Tampilkan hasil setiap pertandingan dari daftar pemenang.
 
-Cara kerja dari program yaitu meminta user untuk memasukkan nama dua klub yang akan bertanding. User memasukkan skor untuk kedua klub di setiap pertandingan. Program untuk menentukan pemenang dari skor yang lebih unggul atau mencatat hasil imbang jika skornya sama. Ketika skor tidak valid, program akan berhenti dan menampilan hasil pertandingan.
 
-**4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan Isi array dan memeriksa apakah membentuk palindrom.**                         
+## Unguided - 4 
+### Study Case
+Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan Isi array dan memeriksa apakah membentuk palindrom.**                         
 *Modifikasi program tersebut dengan menambahkan fungsi palindrom. Tambahkan instruksi untuk memanggil fungsi tersebut dan menampilkan hasilnya pada program utama.*
 
 #### Source Code
@@ -628,5 +657,4 @@ Algoritma Program :
 3. Fungsi 'palindrom' untuk memeriksa apakah teks di dalam array merupakan palindrom.
 4. Tampilkan hasil pemeriksaan apakah teks palindrom atau tidak.
 
-Cara kerja dari program ini yaitu meminta inputan dari user untuk memasukkan teks karakter per karakter. Karakter yang diinputkan akan di salin ke array. Program memeriksa apakah termasuk palindrom. Hasil pemeriksaan ini ditampilkan dengan mencetak 'true' jika teks adalah palindrom atau 'false' jika tidak palindrom.
 
