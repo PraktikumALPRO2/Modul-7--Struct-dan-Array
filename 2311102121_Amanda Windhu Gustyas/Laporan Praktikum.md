@@ -420,8 +420,97 @@ func main() {
 
 Program ini meminta input nama dua klub dan skor pertandingan secara berulang. Program akan menentukan pemenang setiap pertandingan, mencatat hasilnya, dan berhenti jika skor negatif dimasukkan. Di akhir, daftar pemenang ditampilkan.
 
-### 4. 
+### 4. Sebuah array digunakan untuk menampung sekumpulan karakter, Anda diminta untuk membuat sebuah subprogram untuk melakukan membalikkan urutan isi array dan memeriksa apakah membentuk palindrom.
 
+```go
+package main
+
+import (
+	"fmt"
+)
+
+const NMAX int = 127
+
+type tabel struct {
+	tab [NMAX]rune
+	m   int
+}
+
+// Fungsi untuk mengisi array dari input
+func isiArray(t *tabel, n *int) {
+	var ch rune
+	fmt.Println("Masukkan karakter (akhiri dengan '.'): ")
+
+	for {
+		// Input karakter
+		fmt.Scanf("%c\n", &ch)
+		if ch == '.' || *n >= NMAX {
+			break
+		}
+		t.tab[*n] = ch
+		*n++
+	}
+	t.m = *n
+}
+
+// Fungsi untuk mencetak isi array
+func cetakArray(t tabel, n int) {
+	for i := 0; i < n; i++ {
+		fmt.Printf("%c", t.tab[i])
+	}
+	fmt.Println()
+}
+
+// Fungsi untuk membalikkan isi array
+func balikkanArray(t *tabel, n int) {
+	for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
+		t.tab[i], t.tab[j] = t.tab[j], t.tab[i]
+	}
+}
+
+// Fungsi untuk mengecek apakah array membentuk palindrom
+func palindrom(t tabel, n int) bool {
+	for i := 0; i < n/2; i++ {
+		if t.tab[i] != t.tab[n-i-1] {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	var tab tabel
+	var n int
+
+	// Mengisi array dengan input dari user
+	isiArray(&tab, &n)
+
+	// Menampilkan teks asli
+	fmt.Print("Teks: ")
+	cetakArray(tab, n)
+
+	// Membalikkan array
+	balikkanArray(&tab, n)
+
+	// Menampilkan teks yang telah dibalik
+	fmt.Print("Reverse teks: ")
+	cetakArray(tab, n)
+
+	// Mengecek apakah palindrom
+	if palindrom(tab, n) {
+		fmt.Println("Palindrom: true")
+	} else {
+		fmt.Println("Palindrom: false")
+	}
+}
+```
+## Output: ![image](https://github.com/user-attachments/assets/ec011911-2f37-4af5-9303-459bfcb35059)
+
+Program ini membaca kumpulan karakter dari pengguna, mencetak teks aslinya, membalikkan urutannya, dan mengecek apakah teks tersebut adalah palindrom. Pengguna memasukkan karakter satu per satu, lalu program menampilkan hasil berupa teks asli, teks terbalik, dan status apakah teks itu palindrom (teks yang sama jika dibaca dari depan dan belakang). Program ini menggunakan logika sederhana untuk membalik teks dan memeriksa kondisi palindrom.
+
+
+## KESIMPULAN
+Tipe data bentukan, array, slice, dan map memberikan fleksibilitas dalam pengelolaan data di Go. Penggunaan struktur data yang tepat memungkinkan program menjadi lebih efisien dan terorganisir, terutama dalam mengelola data dengan ukuran dinamis atau data yang memiliki hubungan tertentu.
 
 
 
